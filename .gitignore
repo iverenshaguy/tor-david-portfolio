@@ -1,0 +1,59 @@
+########################
+# Dependency directories
+########################
+node_modules/
+.pnp/          # Yarn Plug'n'Play
+.pnp.cjs
+.pnp.mjs
+
+########################
+# Next.js build outputs
+########################
+.next/         # Default Next.js build & cache
+out/           # `next export` static output (if used)
+.next/cache/   # Build‑cache (can speed local rebuilds)
+
+##################
+# Vercel artifacts
+##################
+.vercel/
+
+###########################
+# Environment credentials
+###########################
+.env*          # .env, .env.local, .env.prod, etc.
+
+#################
+# Log files
+#################
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+########################
+# Test & coverage output
+########################
+coverage/
+jest-html-reporters-*.html
+
+########################
+# TypeScript build info
+########################
+*.tsbuildinfo
+
+#######################
+# IDE/editor folders
+#######################
+.vscode/
+.idea/
+*.sw?
+*.swp
+*.swo
+
+##################
+# OS metadata
+##################
+.DS_Store
+Thumbs.db
