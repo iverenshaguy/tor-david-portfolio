@@ -1,0 +1,212 @@
+"use client";
+
+import React, { useRef } from "react";
+
+import { useLenis } from "lenis/react";
+import Heading from "app/components/ui/heading";
+import Section from "app/components/ui/section";
+import Content from "app/components/ui/content";
+import { Project } from "app/components/project";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import gsap from "gsap";
+
+gsap.registerPlugin(useGSAP, ScrollTrigger);
+
+// TODO: Update project cards to show project name when stacked
+
+// Define project data for mapping
+const projects = [
+  {
+    id: "arvo-finance",
+    title: "Arvo Finance",
+    description:
+      "ArvoFinance began an upgrade and redesign of it's mobile application and web application with the vision of becoming the next best Fintech owned app in Nigeria.",
+    role: "Product Designer",
+    responsibilities:
+      "User Research, Interaction, Web design, Prototyping & Testing",
+    imageUrl: "/projects/arvo-finance/arvo-finance-frame.png",
+    hasMobile: true,
+  },
+  {
+    id: "oliver-mead",
+    title: "Oliver Mead",
+    description:
+      "This website was created to tell individuals what they need to know about Oliver Mead and it also answers frequently asked questions.",
+    role: "Product Designer",
+    responsibilities:
+      "User Research, Interaction, Web design, Prototyping & Testing",
+    imageUrl: "/projects/oliver-mead/oliver-mead-frame.png",
+    hasMobile: true,
+  },
+  {
+    id: "arvo-link",
+    title: "Arvo Link",
+    description:
+      "The project was given to my team by one of the political parties in Nigeria sometime before the general election that was held last year.",
+    role: "Product Designer",
+    responsibilities:
+      "User Research, Interaction, Web design, Prototyping & Testing",
+    imageUrl: "/projects/arvo-link/arvo-link-frame.png",
+  },
+  {
+    id: "performance-metric",
+    title: "Performance Metric",
+    description:
+      "This project was brought up within the Tech team at Oliver Mead to help us keep track of how well every member of the tech team is performing.",
+    role: "Product Designer",
+    responsibilities: "Web design, Prototyping & Testing",
+    imageUrl: "/projects/performance-metric/performance-metric-frame.png",
+  },
+];
+
+export default function PortfolioSection() {
+  const lenis = useLenis();
+  const containerRef = useRef<HTMLDivElement>(null);
+  const cardRefs = useRef<HTMLDivElement[]>([]);
+
+  useGSAP(
+    () => {
+      const handleScroll = () => ScrollTrigger.update();
+
+      lenis?.on("scroll", handleScroll);
+
+      gsap.ticker.add((time) => {
+        lenis?.raf(time * 1000);
+      });
+      gsap.ticker.lagSmoothing(0);
+
+      const [, ...cards] = cardRefs.current;
+
+      cards.forEach((card) => {
+        gsap.set(card, {
+          y: window.innerHeight,
+        });
+      });
+
+      ScrollTrigger.create({
+        trigger: containerRef.current,
+        // start 80px below the beginning of the page, this leaves space for the navbar
+        start: "-80px top",
+        end: `+=${window.innerHeight * 2}px`,
+        pin: true,
+        pinSpacing: true,
+        scrub: 1,
+        onUpdate: (self) => {
+          const progress = self.progress;
+          const totalCards = cards.length;
+          const progressPerCard = 1 / totalCards;
+
+          cards.forEach((card, index) => {
+            const cardStart = index * progressPerCard;
+            let cardProgress = (progress - cardStart) / progressPerCard;
+            cardProgress = Math.min(Math.max(cardProgress, 0), 1);
+
+            const yPos =
+              window.innerHeight * (1 - cardProgress) + (index + 1) * 40;
+
+            gsap.to(card, {
+              y: yPos,
+              x: 0,
+              duration: 0,
+              ease: "none",
+            });
+          });
+        },
+      });
+
+      return () => {
+        lenis?.destroy();
+      };
+    },
+    { scope: containerRef, dependencies: [] },
+  );
+
+  return (
+    <Section
+      id="works"
+      ref={containerRef}
+      // h-[calc(105px_+_var(--section-height))]
+      className="h-screen w-screen overflow-scroll bg-white"
+    >
+      <Content>
+        <div className="flex flex-col items-center gap-12">
+          <Heading>
+            <span className="relative inline-block">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="126"
+                height="105"
+                viewBox="0 0 126 105"
+                fill="none"
+                className="absolute top-[-50px] left-[-90px]"
+              >
+                <path
+                  d="M63.8124 59.2485C63.8124 59.2485 37.0659 56.3772 17.1405 62.2661"
+                  stroke="black"
+                  strokeWidth="4"
+                  strokeLinecap="round"
+                />
+                <path
+                  d="M83.5641 46.9853C83.5641 46.9853 76.061 17.9032 81.7812 8.26636"
+                  stroke="black"
+                  strokeWidth="4"
+                  strokeLinecap="round"
+                />
+                <path
+                  d="M61.4406 78.1287C61.4406 78.1287 28.06 89.1628 22.4539 94.529"
+                  stroke="black"
+                  strokeWidth="4"
+                  strokeLinecap="round"
+                />
+              </svg>
+              Selected works from 2022 till date
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="175"
+                height="64"
+                viewBox="0 0 175 64"
+                fill="none"
+                className="absolute top-[-10px] right-[-125px]"
+              >
+                <path
+                  d="M79.8201 30.8228C79.8201 30.8228 109.694 24.5892 161.871 33.9971"
+                  stroke="black"
+                  strokeWidth="4"
+                  strokeLinecap="round"
+                />
+                <path
+                  d="M66.0235 39.9644C66.0235 39.9644 89.0176 52.4978 90.1327 58.9207"
+                  stroke="black"
+                  strokeWidth="4"
+                  strokeLinecap="round"
+                />
+                <path
+                  d="M71.1476 19.7212C71.1476 19.7212 95.594 17.3979 112.305 6.55981"
+                  stroke="black"
+                  strokeWidth="4"
+                  strokeLinecap="round"
+                />
+              </svg>
+            </span>
+          </Heading>
+
+          <div className="relative h-[calc(100vh_-_120px)] w-full space-y-4">
+            {projects.map((project, index) => (
+              <Project
+                key={index}
+                ref={(el: HTMLDivElement | null) => {
+                  if (el) {
+                    cardRefs.current[index] = el;
+                  }
+                }}
+                project={project}
+                className={`absolute top-[235px] left-1/2 -translate-[50%] will-change-transform z-[${10 * index}] last:mb-16`}
+              />
+            ))}
+          </div>
+        </div>
+      </Content>
+    </Section>
+  );
+}
