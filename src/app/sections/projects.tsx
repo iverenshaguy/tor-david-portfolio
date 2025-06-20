@@ -13,9 +13,6 @@ import gsap from "gsap";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
-// TODO: Update project cards to show project name when stacked
-
-// Define project data for mapping
 const projects = [
   {
     id: "arvo-finance",
@@ -25,7 +22,7 @@ const projects = [
     role: "Product Designer",
     responsibilities:
       "User Research, Interaction, Web design, Prototyping & Testing",
-    imageUrl: "/projects/arvo-finance/arvo-finance-frame.png",
+    imageUrl: "/projects/arvo-finance/arvo-finance-frame.svg",
     hasMobile: true,
   },
   {
@@ -36,7 +33,7 @@ const projects = [
     role: "Product Designer",
     responsibilities:
       "User Research, Interaction, Web design, Prototyping & Testing",
-    imageUrl: "/projects/oliver-mead/oliver-mead-frame.png",
+    imageUrl: "/projects/oliver-mead/oliver-mead-frame.svg",
     hasMobile: true,
   },
   {
@@ -47,7 +44,7 @@ const projects = [
     role: "Product Designer",
     responsibilities:
       "User Research, Interaction, Web design, Prototyping & Testing",
-    imageUrl: "/projects/arvo-link/arvo-link-frame.png",
+    imageUrl: "/projects/arvo-link/arvo-link-frame.svg",
   },
   {
     id: "performance-metric",
@@ -56,7 +53,7 @@ const projects = [
       "This project was brought up within the Tech team at Oliver Mead to help us keep track of how well every member of the tech team is performing.",
     role: "Product Designer",
     responsibilities: "Web design, Prototyping & Testing",
-    imageUrl: "/projects/performance-metric/performance-metric-frame.png",
+    imageUrl: "/projects/performance-metric/performance-metric-frame.svg",
   },
 ];
 
@@ -91,7 +88,7 @@ export default function PortfolioSection() {
         end: `+=${window.innerHeight * 2}px`,
         pin: true,
         pinSpacing: true,
-        scrub: 1,
+        scrub: 4,
         onUpdate: (self) => {
           const progress = self.progress;
           const totalCards = cards.length;
@@ -102,8 +99,29 @@ export default function PortfolioSection() {
             let cardProgress = (progress - cardStart) / progressPerCard;
             cardProgress = Math.min(Math.max(cardProgress, 0), 1);
 
+            const stackOffset = (index + 1) * 40;
+
+            // Responsive peek offset for the second card
+            let peekOffset;
+            if (index === 0) {
+              if (window.innerWidth < 640) {
+                // Mobile
+                peekOffset = window.innerHeight * 0.4;
+              } else if (window.innerWidth < 1024) {
+                // Tablet
+                peekOffset = window.innerHeight * 0.5;
+              } else {
+                // Desktop
+                peekOffset = 240;
+              }
+            } else {
+              peekOffset = window.innerHeight * 0.05; // Others barely peek
+            }
+
             const yPos =
-              window.innerHeight * (1 - cardProgress) + (index + 1) * 40;
+              window.innerHeight * (1 - cardProgress) +
+              stackOffset -
+              peekOffset * (1 - cardProgress);
 
             gsap.to(card, {
               y: yPos,
@@ -127,7 +145,7 @@ export default function PortfolioSection() {
       id="works"
       ref={containerRef}
       // h-[calc(105px_+_var(--section-height))]
-      className="h-screen w-screen overflow-scroll bg-white"
+      className="h-screen w-screen overflow-scroll bg-white dark:bg-[#1A1A1A]"
     >
       <Content>
         <div className="flex flex-col items-center gap-12">
@@ -143,19 +161,19 @@ export default function PortfolioSection() {
               >
                 <path
                   d="M63.8124 59.2485C63.8124 59.2485 37.0659 56.3772 17.1405 62.2661"
-                  stroke="black"
+                  stroke="currentColor"
                   strokeWidth="4"
                   strokeLinecap="round"
                 />
                 <path
                   d="M83.5641 46.9853C83.5641 46.9853 76.061 17.9032 81.7812 8.26636"
-                  stroke="black"
+                  stroke="currentColor"
                   strokeWidth="4"
                   strokeLinecap="round"
                 />
                 <path
                   d="M61.4406 78.1287C61.4406 78.1287 28.06 89.1628 22.4539 94.529"
-                  stroke="black"
+                  stroke="currentColor"
                   strokeWidth="4"
                   strokeLinecap="round"
                 />
@@ -171,19 +189,19 @@ export default function PortfolioSection() {
               >
                 <path
                   d="M79.8201 30.8228C79.8201 30.8228 109.694 24.5892 161.871 33.9971"
-                  stroke="black"
+                  stroke="currentColor"
                   strokeWidth="4"
                   strokeLinecap="round"
                 />
                 <path
                   d="M66.0235 39.9644C66.0235 39.9644 89.0176 52.4978 90.1327 58.9207"
-                  stroke="black"
+                  stroke="currentColor"
                   strokeWidth="4"
                   strokeLinecap="round"
                 />
                 <path
                   d="M71.1476 19.7212C71.1476 19.7212 95.594 17.3979 112.305 6.55981"
-                  stroke="black"
+                  stroke="currentColor"
                   strokeWidth="4"
                   strokeLinecap="round"
                 />

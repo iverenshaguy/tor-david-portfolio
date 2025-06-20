@@ -29,7 +29,7 @@ export function Footer() {
       className="relative w-full border-t-[#C0BAC7] bg-linear-[180deg,_#FFF_50%,_#C0BAC7_100%] py-16 font-sans dark:bg-[linear-gradient(180deg,_#1A1A1A_50%,_#3A3342_150.64%)]"
     >
       <Content className="py-8">
-        <div className="flex flex-col items-start">
+        <div className="relative z-10 flex flex-col items-start">
           <Heading className="mb-11 text-left leading-[normal]">
             Ready to enhance your establishment with <br />
             simple designs that are visually appealing <br />
@@ -40,7 +40,7 @@ export function Footer() {
             <span className="relative inline-flex flex-row items-center">
               <a
                 href="https://wa.link/62g076"
-                className="h-auto rounded-full bg-[#4a3d7a] px-4 py-2 text-white transition hover:bg-[#3a2d6a]"
+                className="h-auto rounded-full bg-[#4a3d7a] px-4 py-2 text-white transition hover:bg-[#3a2d6a] dark:text-gray-300"
                 rel="noopener noreferrer"
                 target="_blank"
               >
@@ -75,10 +75,10 @@ export function Footer() {
               </svg>
             </span>
 
-            <hr className="my-12 h-[1px] w-full border-[#E0E0E0] bg-[#E0E0E0]" />
+            <hr className="my-12 h-[1px] w-full border-[#E0E0E0] bg-[#E0E0E0] dark:border-[#4A4A4A] dark:bg-[#4A4A4A]" />
 
             <div className="mt-5">
-              <h3 className="mb-10 font-sans text-2xl leading-normal font-medium tracking-[0.48px] text-[#828282]">
+              <h3 className="mb-10 font-sans text-2xl leading-normal font-medium tracking-[0.48px] text-[#828282] dark:text-[#A3A3A3]">
                 Connect
               </h3>
 
@@ -86,7 +86,7 @@ export function Footer() {
                 {socialLinks.map((link, index) => (
                   <a
                     key={index}
-                    className="border-gray-4 flex h-[70px] w-[70px] items-center justify-center rounded-[35px] border border-solid p-5"
+                    className="border-gray-4 flex h-[70px] w-[70px] items-center justify-center rounded-[35px] border border-solid p-5 transition-colors hover:bg-gray-50 dark:border-[#4A4A4A] dark:hover:bg-[#2A2A2A]"
                     href={link.href}
                     rel="noopener noreferrer"
                     target="_blank"
@@ -97,6 +97,7 @@ export function Footer() {
                       alt="Social icon"
                       width={30}
                       height={30}
+                      className="transition-[filter] dark:brightness-1 dark:invert"
                     />
                   </a>
                 ))}
@@ -111,7 +112,7 @@ export function Footer() {
           alt="Vector decoration"
           width={410}
           height={343}
-          className="absolute top-[95px] right-[173px] h-[342px] w-[410px] object-contain"
+          className="absolute top-[95px] right-[173px] z-0 h-[342px] w-[410px] object-contain"
         />
       </Content>
     </footer>

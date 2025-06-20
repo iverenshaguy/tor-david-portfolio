@@ -6,7 +6,10 @@ import Content from "app/components/ui/content";
 
 export default function AboutSection() {
   return (
-    <Section id="about" className="shadow-card-shadow bg-white">
+    <Section
+      id="about"
+      className="shadow-card-shadow bg-white dark:bg-[#1A1A1A]"
+    >
       <Content>
         <div className="flex flex-col items-center gap-12">
           {/* Section Header */}
@@ -34,7 +37,7 @@ export default function AboutSection() {
           {/* About Content */}
           <div className="w-full">
             <div className="space-y-6 p-0 font-sans">
-              <p className="text-lg text-black">
+              <p className="text-lg text-black dark:text-white">
                 <span className="font-normal">My name is </span>
                 <span className="font-bold">Shaguy Tor David</span>
                 <span className="font-normal">
@@ -46,7 +49,7 @@ export default function AboutSection() {
                 </span>
               </p>
 
-              <p className="text-lg text-black">
+              <p className="text-lg text-black dark:text-white">
                 I am passionate about crafting stunning, user-friendly,
                 intuitive and engaging digital experiences that drive results.
                 With a unique skill set that combines user-centered design
@@ -54,7 +57,7 @@ export default function AboutSection() {
                 business objectives and delight users.
               </p>
 
-              <div className="block text-lg text-black">
+              <div className="block text-lg text-black dark:text-white">
                 I am also passionate about:
                 <ul className="list-inside list-disc pl-2">
                   <li>Designing user-friendly interfaces</li>
@@ -63,19 +66,19 @@ export default function AboutSection() {
                 </ul>
               </div>
 
-              <p className="text-lg text-black">
+              <p className="text-lg text-black dark:text-white">
                 I am a very organised person, always comfortable learning new
                 things, fast learner, problem solver, cartoon lover, Introverted
                 person and interactive.
               </p>
 
-              <p className="text-lg text-black">
+              <p className="text-lg text-black dark:text-white">
                 I&#39;m a self-motivated learner and enjoy tackling challenges.
                 I&#39;m excited to contribute my skills to ambitious projects
                 and work with positive, like-minded individuals.
               </p>
 
-              <p className="text-lg text-black">
+              <p className="text-lg text-black dark:text-white">
                 I taught myself QA because I enjoy working on products from
                 beginning to end, from ideation to development.
               </p>
@@ -87,7 +90,7 @@ export default function AboutSection() {
             href="https://www.icloud.com/iclouddrive/0f6TH116APzcgvlgWq5en-BVw#Tor_David_Shaguy's_Resume_2"
             rel="noopener noreferrer"
             target="_blank"
-            className="h-auto rounded-full bg-[#4a3d7a] p-4 text-white hover:bg-[#3d3264]"
+            className="h-auto rounded-full bg-[#4a3d7a] p-4 text-white hover:bg-[#3d3264] dark:bg-[#5a4b8e] dark:text-gray-300 dark:hover:bg-[#4a3d7a]"
           >
             Download Resume
           </a>

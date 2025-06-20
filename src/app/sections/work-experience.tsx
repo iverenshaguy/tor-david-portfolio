@@ -45,19 +45,19 @@ export default function WorkExperienceSection() {
   ];
 
   return (
-    <Section id="skills" className="bg-stone-100">
+    <Section id="skills" className="bg-stone-100 dark:bg-neutral-800">
       <Content className="relative">
         <div className="flex flex-col items-center gap-12">
           <Heading>Skill &amp; Experience</Heading>
 
           <div className="w-full">
             <div className="flex flex-col items-start space-y-6 p-0 font-sans">
-              <p className="text-lg text-black">
+              <p className="text-lg text-black dark:text-white">
                 I am a UI/UX Designer and I conduct QA tests for websites and
                 applications.
               </p>
 
-              <p className="font-sans text-lg leading-[normal] tracking-[0.36px] text-black">
+              <p className="font-sans text-lg leading-[normal] tracking-[0.36px] text-black dark:text-white">
                 <span className="font-normal">
                   I am skilled in a range of design tools such as,{" "}
                 </span>
@@ -83,7 +83,7 @@ export default function WorkExperienceSection() {
                 <span className="font-normal">. </span>
               </p>
 
-              <p className="text-lg leading-[normal] font-normal tracking-[0.36px] text-black">
+              <p className="text-lg leading-[normal] font-normal tracking-[0.36px] text-black dark:text-white">
                 <span className="font-normal">
                   I have experience designing{" "}
                 </span>
@@ -108,7 +108,7 @@ export default function WorkExperienceSection() {
                 <span className="font-normal">.</span>
               </p>
 
-              <p className="font-sans text-lg leading-[normal] font-normal tracking-[0.36px] text-black">
+              <p className="font-sans text-lg leading-[normal] font-normal tracking-[0.36px] text-black dark:text-white">
                 <span className="font-normal">
                   My approach is grounded in data and user insights and I have
                   some experience conducting{" "}
@@ -125,7 +125,7 @@ export default function WorkExperienceSection() {
                 </span>
               </p>
 
-              <div className="w-full text-lg leading-[normal] font-normal tracking-[0.36px] text-black">
+              <div className="w-full text-lg leading-[normal] font-normal tracking-[0.36px] text-black dark:text-white">
                 <span className="relative font-bold">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"

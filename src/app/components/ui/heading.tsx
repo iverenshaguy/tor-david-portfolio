@@ -13,7 +13,7 @@ export default function Heading({
 
   return (
     <Tag
-      className={`relative text-center font-sans text-4xl font-semibold tracking-[0.8px] text-black ${className}`}
+      className={`relative text-center font-sans text-4xl font-semibold tracking-[0.8px] text-black dark:text-gray-400 ${className}`}
     >
       {children}
     </Tag>
