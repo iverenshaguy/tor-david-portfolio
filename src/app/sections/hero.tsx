@@ -8,8 +8,8 @@ export const HeroSection = () => {
   return (
     <Section className="shadow-custom-hero flex h-screen flex-col overflow-hidden bg-stone-100 py-0! lg:max-h-[900px] lg:min-h-[850px] dark:bg-neutral-800">
       <Navbar />
-      <Content className="flex h-[calc(100vh-var(--sticky-navbar-height))] flex-grow flex-col items-center justify-center gap-8 text-center md:gap-16 lg:flex-row lg:items-center lg:justify-between lg:gap-0 lg:text-left">
-        <div className="z-10 flex w-full flex-col items-center gap-8 pt-10 md:pt-16 lg:max-w-[600px] lg:flex-1 lg:items-start lg:py-0">
+      <Content className="flex h-[calc(100vh-var(--sticky-navbar-height))] flex-grow flex-col items-center justify-center gap-8 text-center md:gap-16 lg:flex-row lg:items-center lg:justify-between lg:gap-8 lg:text-left">
+        <div className="relative z-10 flex w-full flex-col items-center gap-8 pt-10 md:pt-16 lg:max-w-[600px] lg:flex-1 lg:items-start lg:py-0">
           <h2 className="font-sans text-lg font-medium tracking-[0.50px] text-[#4F4F4F] md:text-2xl lg:text-xl dark:text-neutral-400">
             ✌ Hi, I&apos;m David Shaguy,{" "}
             <span className="relative inline-block">
@@ -41,13 +41,13 @@ export const HeroSection = () => {
           </div>
         </div>
 
-        <div className="relative z-0 h-full w-full lg:relative lg:mt-0 lg:w-1/2 lg:flex-1">
+        <div className="z-0 flex h-full w-full justify-center lg:mt-0 lg:flex-1">
           <Image
             src="/profile-image-grouped.png"
             alt="Profile"
-            width={771}
-            height={925}
-            className="absolute bottom-0 left-1/2 h-[100%] w-auto -translate-x-[53%] translate-y-[7%] transform object-contain md:-translate-y-0 lg:absolute lg:right-[-10%] lg:bottom-0 xl:h-auto"
+            width={600}
+            height={760}
+            className="absolute bottom-0 max-h-[50vh] w-auto md:max-h-[55vh] lg:max-h-[100%]"
           />
         </div>
       </Content>

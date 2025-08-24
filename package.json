@@ -7,6 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "lint-check": "eslint --format=stylish src/",
+    "type-check": "tsc --noEmit",
     "prepare": "husky",
     "precommit": "pnpm exec lint-staged"
   },

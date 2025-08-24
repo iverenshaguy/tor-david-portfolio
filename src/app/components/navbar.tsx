@@ -25,7 +25,7 @@ export function Navbar() {
   }, []);
 
   return (
-    <header className="pt-[22px]">
+    <header className="h-[94px] pt-[22px]">
       <div
         className={`z-50 w-full tracking-tight transition-all duration-300 ease-in-out ${isScrolled ? "fixed top-0 left-0 px-0 py-0" : "mx-auto max-w-7xl px-4"}`}
       >

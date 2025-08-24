@@ -9,9 +9,7 @@ export function Project({
   project: {
     id: string;
     title: string;
-    role: string;
     description: string;
-    responsibilities: string;
     imageUrl: string;
     hasMobile?: boolean;
   };
@@ -39,13 +37,13 @@ export function Project({
       ref={ref}
       key={project.id}
       onClick={handleMobileViewDesign}
-      className={`group h-[494px] w-full overflow-hidden ${className} cursor-pointer rounded-[40px] bg-white p-4 md:cursor-default dark:bg-[#1A1A1A]`}
+      className={`group h-[550px] w-full overflow-hidden md:h-[395px] lg:h-[494px] ${className} cursor-pointer rounded-[40px] bg-white p-4 md:cursor-default dark:bg-[#1A1A1A]`}
     >
       <div className="p-0">
-        <div className="flex flex-col items-center gap-10 md:flex-row">
+        <div className="flex flex-col items-center gap-4 md:flex-row md:gap-10">
           {/* Left side - Device mockups */}
           <div
-            className="border-gray-5 flex h-(--project-card-height) w-full items-center justify-center rounded-[40px] border border-solid bg-cover bg-center lg:min-w-[725.7px]"
+            className="flex h-[220px] w-full items-center justify-center rounded-[40px] border border-solid border-gray-100 bg-cover bg-center md:h-[364px] lg:h-[464px] lg:min-w-[725.7px]"
             style={{
               backgroundImage: `url(${project.imageUrl})`,
             }}
@@ -54,19 +52,15 @@ export function Project({
           </div>
 
           {/* Right side - Project info */}
-          <div className="flex w-full flex-col gap-[30px] bg-transparent">
+          <div className="flex w-full flex-col gap-4 bg-transparent md:gap-[30px]">
             <div className="flex flex-col gap-2.5 text-black dark:text-gray-400">
               <div className="flex flex-col gap-2.5 py-[5px]">
                 <h3 className="w-full text-2xl font-semibold">
                   {project.title}
                 </h3>
-                <p className="w-full text-lg">{project.description}</p>
-              </div>
-
-              <div className="flex flex-col gap-2.5 py-[5px]">
-                <h4 className="text-xl font-medium">ROLE</h4>
-                <p className="text-lg font-bold">{project.role}</p>
-                <p className="text-lg">{project.responsibilities}</p>
+                <p className="w-full text-sm leading-6 md:text-lg md:leading-normal">
+                  {project.description}
+                </p>
               </div>
             </div>
 
@@ -74,8 +68,11 @@ export function Project({
               onClick={handleViewDesign}
               className="flex h-auto cursor-pointer items-center justify-between rounded-full bg-[#4a3d7a] p-4 text-white transition-colors hover:bg-[#3d3264]"
             >
-              <span className="left-6 text-white dark:text-gray-300">
+              <span className="left-6 hidden text-white md:block dark:text-gray-300">
                 View Design
+              </span>
+              <span className="left-6 text-white md:hidden dark:text-gray-300">
+                View Details
               </span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"

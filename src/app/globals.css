@@ -5,7 +5,6 @@
   /* Dimensions  */
   --sticky-navbar-height: 80px;
   --section-height: calc(100vh - var(--sticky-navbar-height));
-  --project-card-height: 464px;
 
   /* Box Shadow */
   --section-box-shadow: -2px 1px 6px 0px rgba(0, 0, 0, 0.10), 2px -1px 6px 0px rgba(0, 0, 0, 0.10)

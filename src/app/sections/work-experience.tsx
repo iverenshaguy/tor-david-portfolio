@@ -47,7 +47,7 @@ export default function WorkExperienceSection() {
   return (
     <Section id="skills" className="bg-stone-100 dark:bg-neutral-800">
       <Content className="relative">
-        <div className="flex flex-col items-center gap-12">
+        <div className="relative z-10 flex flex-col items-center gap-12">
           <Heading>Skill &amp; Experience</Heading>
 
           <div className="w-full">
@@ -126,37 +126,39 @@ export default function WorkExperienceSection() {
               </p>
 
               <div className="w-full text-lg leading-[normal] font-normal tracking-[0.36px] text-black dark:text-white">
-                <span className="relative font-bold">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="138"
-                    height="85"
-                    viewBox="0 0 138 85"
-                    fill="none"
-                    className="absolute left-[-75%]"
-                  >
-                    <path
-                      d="M2 42.8246C16.6389 31.6138 35.9 22.3362 54.8068 26.4141C66.8895 29.0202 77.5765 40.2514 78.8327 52.585C80.0191 64.2332 76.3221 76.5231 64.8176 81.1871C58.821 83.6181 52.5198 83.107 48.7289 77.3258C42.9371 68.4935 48.1768 54.4814 53.9488 47.0434C71.9618 23.8308 105.71 10.0508 134.75 15.3308"
-                      stroke="#5A4B8E"
-                      strokeWidth="4"
-                      strokeLinecap="round"
-                    />
-                    <path
-                      d="M117.176 2C121.599 4.65385 131.507 11.0231 135.753 15.2692"
-                      stroke="#5A4B8E"
-                      strokeWidth="4"
-                      strokeLinecap="round"
-                    />
-                    <path
-                      d="M135.781 15.2688C131.358 17.9226 121.45 24.2919 117.204 28.538"
-                      stroke="#5A4B8E"
-                      strokeWidth="4"
-                      strokeLinecap="round"
-                    />
-                  </svg>
-                  My experiences are:
-                  <br />
-                </span>
+                <h2 className="text-center md:text-left">
+                  <span className="relative font-bold">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="138"
+                      height="85"
+                      viewBox="0 0 138 85"
+                      fill="none"
+                      className="absolute top-[8px] left-[-48px] h-[26px] w-[44px] md:left-[-48px] lg:left-[-75%] lg:h-[85px] lg:w-[128px]"
+                    >
+                      <path
+                        d="M2 42.8246C16.6389 31.6138 35.9 22.3362 54.8068 26.4141C66.8895 29.0202 77.5765 40.2514 78.8327 52.585C80.0191 64.2332 76.3221 76.5231 64.8176 81.1871C58.821 83.6181 52.5198 83.107 48.7289 77.3258C42.9371 68.4935 48.1768 54.4814 53.9488 47.0434C71.9618 23.8308 105.71 10.0508 134.75 15.3308"
+                        stroke="#5A4B8E"
+                        strokeWidth="4"
+                        strokeLinecap="round"
+                      />
+                      <path
+                        d="M117.176 2C121.599 4.65385 131.507 11.0231 135.753 15.2692"
+                        stroke="#5A4B8E"
+                        strokeWidth="4"
+                        strokeLinecap="round"
+                      />
+                      <path
+                        d="M135.781 15.2688C131.358 17.9226 121.45 24.2919 117.204 28.538"
+                        stroke="#5A4B8E"
+                        strokeWidth="4"
+                        strokeLinecap="round"
+                      />
+                    </svg>
+                    My experiences are:
+                    <br />
+                  </span>
+                </h2>
 
                 <div className="mt-2">
                   {workExperiences.map((experience, index) => (
@@ -185,21 +187,21 @@ export default function WorkExperienceSection() {
           width={58}
           height={45}
           alt="Highlight decoration"
-          className="absolute top-0 left-0 h-[45px] w-[58px]"
+          className="absolute top-[4px] left-4 h-[25px] w-[32px] md:top-0 md:left-4 md:h-[45px] md:w-[58px] lg:top-0 lg:left-0"
         />
         <Image
           src="blobs.svg"
           width={203}
           height={162}
           alt="Highlight decoration"
-          className="absolute top-[-20px] right-0 h-[162px] w-[203px]"
+          className="absolute top-0 right-0 h-[74] w-[93] md:right-[-16px] md:h-[162px] md:w-[203px] lg:top-[-20px] lg:right-[0]"
         />
         <Image
           src="/loops.svg"
           width={277}
           height={90}
           alt="Group decoration"
-          className="absolute right-[205px] bottom-[210px] h-[100px] w-[268px]"
+          className="absolute right-[20px] bottom-[200px] h-[41p] w-[110px] md:right-[205px] md:bottom-[180px] md:h-[80px] md:w-[214px] lg:h-[100px] lg:w-[268px]"
         />
       </Content>
     </Section>

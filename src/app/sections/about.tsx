@@ -11,7 +11,7 @@ export default function AboutSection() {
       className="shadow-card-shadow bg-white dark:bg-[#1A1A1A]"
     >
       <Content>
-        <div className="flex flex-col items-center gap-12">
+        <div className="relative z-10 flex flex-col items-center gap-12">
           {/* Section Header */}
           <Heading>
             <span className="relative inline-block">
@@ -22,7 +22,7 @@ export default function AboutSection() {
                 height="45"
                 viewBox="0 0 501 45"
                 fill="none"
-                className="absolute top-[4px] left-[-80%]"
+                className="absolute top-[24px] left-[-20%] aspect-[53/40] h-[18] w-[200] md:top-[4px] md:left-[-80%] md:aspect-auto md:h-[41] md:w-[400] lg:top-[4px] lg:left-[-80%] lg:h-[45] lg:w-[430]"
               >
                 <path
                   d="M2 2C79.2556 26.4015 286.813 65.4606 499 26.4848"
@@ -102,7 +102,7 @@ export default function AboutSection() {
           width={119}
           height={91}
           alt="Highlight decoration"
-          className="pointer-events-none absolute top-[40px] left-[316px] z-0 w-[20%] max-w-[90px]"
+          className="pointer-events-none absolute top-[20px] left-[20px] z-0 w-[24%] max-w-[60px] md:top-[48px] md:left-[48px] md:w-[20%] md:max-w-[90px] lg:top-[40px] lg:left-[316px] lg:w-[20%] lg:max-w-[90px]"
         />
 
         <Image
@@ -110,7 +110,7 @@ export default function AboutSection() {
           width={514}
           height={526}
           alt="Looper decoration"
-          className="pointer-events-none absolute top-[-80px] right-[111px] z-0 w-[30%] max-w-[514px]"
+          className="pointer-events-none absolute top-[-40px] right-[10px] z-0 w-[30%] max-w-[200px] md:top-[-80px] md:right-[40px] md:w-[30%] md:max-w-[350px] lg:top-[-80px] lg:right-[111px] lg:w-[30%] lg:max-w-[514px]"
         />
       </Content>
     </Section>

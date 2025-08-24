@@ -16,7 +16,7 @@ export default function Section({
     <section
       ref={ref}
       id={id}
-      className={`relative w-full scroll-mt-20 py-16 font-sans ${className}`}
+      className={`relative w-full scroll-mt-20 py-5 font-sans md:px-8 md:py-12 lg:py-16 ${className}`}
     >
       {children}
     </section>

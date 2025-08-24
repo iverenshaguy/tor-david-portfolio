@@ -19,9 +19,6 @@ const projects = [
     title: "Arvo Finance",
     description:
       "ArvoFinance began an upgrade and redesign of it's mobile application and web application with the vision of becoming the next best Fintech owned app in Nigeria.",
-    role: "Product Designer",
-    responsibilities:
-      "User Research, Interaction, Web design, Prototyping & Testing",
     imageUrl: "/projects/arvo-finance/arvo-finance-frame.svg",
     hasMobile: true,
   },
@@ -30,9 +27,6 @@ const projects = [
     title: "Oliver Mead",
     description:
       "This website was created to tell individuals what they need to know about Oliver Mead and it also answers frequently asked questions.",
-    role: "Product Designer",
-    responsibilities:
-      "User Research, Interaction, Web design, Prototyping & Testing",
     imageUrl: "/projects/oliver-mead/oliver-mead-frame.svg",
     hasMobile: true,
   },
@@ -41,9 +35,6 @@ const projects = [
     title: "Arvo Link",
     description:
       "The project was given to my team by one of the political parties in Nigeria sometime before the general election that was held last year.",
-    role: "Product Designer",
-    responsibilities:
-      "User Research, Interaction, Web design, Prototyping & Testing",
     imageUrl: "/projects/arvo-link/arvo-link-frame.svg",
   },
   {
@@ -51,8 +42,6 @@ const projects = [
     title: "Performance Metric",
     description:
       "This project was brought up within the Tech team at Oliver Mead to help us keep track of how well every member of the tech team is performing.",
-    role: "Product Designer",
-    responsibilities: "Web design, Prototyping & Testing",
     imageUrl: "/projects/performance-metric/performance-metric-frame.svg",
   },
 ];
@@ -147,7 +136,7 @@ export default function PortfolioSection() {
       // h-[calc(105px_+_var(--section-height))]
       className="h-screen w-screen overflow-scroll bg-white dark:bg-[#1A1A1A]"
     >
-      <Content>
+      <Content className="pt-8">
         <div className="flex flex-col items-center gap-12">
           <Heading>
             <span className="relative inline-block">
@@ -157,7 +146,7 @@ export default function PortfolioSection() {
                 height="105"
                 viewBox="0 0 126 105"
                 fill="none"
-                className="absolute top-[-50px] left-[-90px]"
+                className="absolute top-[-20px] left-[-30px] h-[50px] w-[66px] md:top-[-50px] md:left-[-90px] md:h-[105px] md:w-[126px]"
               >
                 <path
                   d="M63.8124 59.2485C63.8124 59.2485 37.0659 56.3772 17.1405 62.2661"
@@ -178,14 +167,16 @@ export default function PortfolioSection() {
                   strokeLinecap="round"
                 />
               </svg>
-              Selected works from 2022 till date
+              <div className="max-w-[280px] md:max-w-[600px] lg:max-w-[800px]">
+                Selected works from 2022 till date
+              </div>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="175"
                 height="64"
                 viewBox="0 0 175 64"
                 fill="none"
-                className="absolute top-[-10px] right-[-125px]"
+                className="absolute top-[-15px] right-[-45px] h-[64px] w-[80px] md:top-[-10px] md:right-[-125px] md:h-[64px] md:w-[175px]"
               >
                 <path
                   d="M79.8201 30.8228C79.8201 30.8228 109.694 24.5892 161.871 33.9971"
