@@ -39,7 +39,9 @@ export default function AboutSection() {
             <div className="space-y-6 p-0 font-sans">
               <p className="text-lg text-black dark:text-white">
                 <span className="font-normal">My name is </span>
-                <span className="font-bold">Shaguy Tor David</span>
+                <span className="font-bold">
+                  <strong>Shaguy Tor David</strong>
+                </span>
                 <span className="font-normal">
                   . I am a passionate and detail-oriented UI/UX Designer with a
                   background in Library and information Science which gives me a

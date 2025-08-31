@@ -27,7 +27,6 @@ function parseFrontmatter(fileContent: string) {
 }
 
 function getMDXFiles(dir: string) {
-  console.log({ dir });
   return fs.readdirSync(dir).filter((file) => path.extname(file) === ".mdx");
 }
 

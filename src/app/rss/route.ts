@@ -1,18 +1,27 @@
 import { baseUrl } from "app/sitemap";
 import { getBlogPosts } from "app/lib/utils";
 
+interface BlogPost {
+  metadata: {
+    title: string;
+    summary: string;
+    publishedAt: string;
+  };
+  slug: string;
+}
+
 export async function GET() {
   const allBlogs = await getBlogPosts();
 
   const itemsXml = allBlogs
-    .sort((a: any, b: any) => {
+    .sort((a: BlogPost, b: BlogPost) => {
       if (new Date(a.metadata.publishedAt) > new Date(b.metadata.publishedAt)) {
         return -1;
       }
       return 1;
     })
     .map(
-      (post: any) =>
+      (post: BlogPost) =>
         `<item>
           <title>${post.metadata.title}</title>
           <link>${baseUrl}/blog/${post.slug}</link>

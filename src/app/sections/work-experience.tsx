@@ -63,12 +63,14 @@ export default function WorkExperienceSection() {
                 </span>
                 {designTools.map((tool, index) => (
                   <React.Fragment key={index}>
-                    <span className="font-normal">{tool.split(" ")[0]}</span>
+                    <span className="font-bold">
+                      <strong>{tool.split(" ")[0]}</strong>
+                    </span>
                     {tool.split(" ")[1] && (
                       <>
                         <span className="font-normal"> </span>
-                        <span className="font-normal">
-                          {tool.split(" ")[1]}
+                        <span className="font-bold">
+                          <strong>{tool.split(" ")[1]}</strong>
                         </span>
                       </>
                     )}
@@ -91,7 +93,9 @@ export default function WorkExperienceSection() {
                   <React.Fragment key={index}>
                     {exp.split(" ").map((word, wordIndex) => (
                       <React.Fragment key={`${index}-${wordIndex}`}>
-                        <span className="font-normal">{word}</span>
+                        <span className="font-bold">
+                          <strong>{word}</strong>
+                        </span>
                         {wordIndex < exp.split(" ").length - 1 && (
                           <span className="font-normal"> </span>
                         )}
@@ -113,9 +117,13 @@ export default function WorkExperienceSection() {
                   My approach is grounded in data and user insights and I have
                   some experience conducting{" "}
                 </span>
-                <span className="font-normal">user research</span>
+                <span className="font-bold">
+                  <strong>user research</strong>
+                </span>
                 <span className="font-normal"> and </span>
-                <span className="font-normal">testing</span>
+                <span className="font-bold">
+                  <strong>testing</strong>
+                </span>
                 <span className="font-normal">
                   {" "}
                   to inform my design decisions and improve user experience. I
