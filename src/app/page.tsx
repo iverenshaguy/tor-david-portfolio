@@ -4,6 +4,8 @@ import HeroSection from "app/sections/hero";
 import PortfolioSection from "app/sections/projects";
 import WorkExperienceSection from "app/sections/work-experience";
 
+import Footer from "app/components/footer";
+
 export default function Home() {
   return (
     <Fragment>
@@ -11,6 +13,7 @@ export default function Home() {
       <AboutSection />
       <WorkExperienceSection />
       <PortfolioSection />
+      <Footer />
     </Fragment>
   );
 }

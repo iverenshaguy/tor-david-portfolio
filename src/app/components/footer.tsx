@@ -75,7 +75,7 @@ export function Footer() {
               </svg>
             </span>
 
-            <hr className="my-12 h-[1px] w-full border-[#E0E0E0] bg-[#E0E0E0] dark:border-[#4A4A4A] dark:bg-[#4A4A4A]" />
+            <hr className="my-12 h-[1px] w-full border-gray-200 bg-gray-200 dark:border-[#4A4A4A] dark:bg-[#4A4A4A]" />
 
             <div className="mt-5">
               <h3 className="mb-10 font-sans text-2xl leading-normal font-medium tracking-[0.48px] text-[#828282] dark:text-[#A3A3A3]">

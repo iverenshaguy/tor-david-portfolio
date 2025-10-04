@@ -1,5 +1,6 @@
 import ProjectMockup from "app/components/ui/project-mockup";
 import React from "react";
+import { useRouter } from "next/navigation";
 
 export function Project({
   project,
@@ -16,11 +17,11 @@ export function Project({
   ref?: ((el: HTMLDivElement | null) => void) | React.RefObject<HTMLDivElement>;
   className?: string;
 }) {
-  const handleViewDesign = (
-    e: React.MouseEvent<HTMLDivElement | HTMLButtonElement>,
-  ) => {
-    // Add your view design logic here
-    console.log(`Viewing design for ${project.title}: ${e.target}`);
+  const router = useRouter();
+
+  const handleViewDesign = () => {
+    // Navigate to the portfolio page with the project slug
+    router.push(`/portfolio/${project.id}`);
   };
 
   const handleMobileViewDesign = (e: React.MouseEvent<HTMLDivElement>) => {
@@ -28,7 +29,7 @@ export function Project({
       window.innerWidth < 768 &&
       !(e.target as HTMLElement).closest("button")
     ) {
-      handleViewDesign(e);
+      handleViewDesign();
     }
   };
 
@@ -43,7 +44,7 @@ export function Project({
         <div className="flex flex-col items-center gap-4 md:flex-row md:gap-10">
           {/* Left side - Device mockups */}
           <div
-            className="flex h-[220px] w-full items-center justify-center rounded-[40px] border border-solid border-gray-100 bg-cover bg-center md:h-[364px] lg:h-[464px] lg:min-w-[725.7px]"
+            className="flex h-[220px] w-full items-center justify-center rounded-[40px] border border-solid border-gray-100 bg-cover bg-center md:h-[364px] md:max-w-[400px] lg:h-[464px] lg:max-w-[unset] lg:min-w-[725.7px]"
             style={{
               backgroundImage: `url(${project.imageUrl})`,
             }}

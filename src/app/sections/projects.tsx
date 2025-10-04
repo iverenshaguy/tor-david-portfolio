@@ -53,26 +53,37 @@ export default function PortfolioSection() {
 
   useGSAP(
     () => {
-      const handleScroll = () => ScrollTrigger.update();
+      // Kill any existing ScrollTrigger instances to prevent conflicts
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
 
-      lenis?.on("scroll", handleScroll);
+      if (!lenis || !containerRef.current) return;
 
+      const handleScroll = () => {
+        ScrollTrigger.update();
+      };
+
+      lenis.on("scroll", handleScroll);
+
+      // Integrate Lenis with GSAP ticker
       gsap.ticker.add((time) => {
-        lenis?.raf(time * 1000);
+        lenis.raf(time * 1000);
       });
       gsap.ticker.lagSmoothing(0);
 
+      // Reset card positions
       const [, ...cards] = cardRefs.current;
-
       cards.forEach((card) => {
-        gsap.set(card, {
-          y: window.innerHeight,
-        });
+        if (card) {
+          gsap.set(card, {
+            y: window.innerHeight,
+            clearProps: "all",
+          });
+        }
       });
 
-      ScrollTrigger.create({
+      // Create ScrollTrigger instance
+      const scrollTrigger = ScrollTrigger.create({
         trigger: containerRef.current,
-        // start 80px below the beginning of the page, this leaves space for the navbar
         start: "-80px top",
         end: `+=${window.innerHeight * 2}px`,
         pin: true,
@@ -84,6 +95,8 @@ export default function PortfolioSection() {
           const progressPerCard = 1 / totalCards;
 
           cards.forEach((card, index) => {
+            if (!card) return;
+
             const cardStart = index * progressPerCard;
             let cardProgress = (progress - cardStart) / progressPerCard;
             cardProgress = Math.min(Math.max(cardProgress, 0), 1);
@@ -122,19 +135,34 @@ export default function PortfolioSection() {
         },
       });
 
+      // Cleanup function
       return () => {
-        lenis?.destroy();
+        // Kill the ScrollTrigger instance
+        if (scrollTrigger) {
+          scrollTrigger.kill();
+        }
+
+        // Remove Lenis event listener
+        lenis.off("scroll", handleScroll);
+
+        // Remove GSAP ticker integration
+        gsap.ticker.remove((time) => {
+          lenis.raf(time * 1000);
+        });
       };
     },
-    { scope: containerRef, dependencies: [] },
+    {
+      scope: containerRef,
+      dependencies: [lenis],
+      revertOnUpdate: true,
+    },
   );
 
   return (
     <Section
       id="works"
       ref={containerRef}
-      // h-[calc(105px_+_var(--section-height))]
-      className="h-screen w-screen overflow-scroll bg-white dark:bg-[#1A1A1A]"
+      className="h-screen w-full overflow-scroll bg-white [contain:layout] dark:bg-[#1A1A1A]"
     >
       <Content className="pt-8">
         <div className="flex flex-col items-center gap-12">

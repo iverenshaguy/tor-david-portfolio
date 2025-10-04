@@ -2,7 +2,6 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import Footer from "./components/footer";
 import { baseUrl } from "./sitemap";
 import { Poppins } from "next/font/google";
 import { ReactLenis } from "lenis/react";
@@ -60,7 +59,6 @@ export default function RootLayout({
         <main className="flex min-w-0 flex-auto flex-col px-2 md:px-0">
           <ReactLenis root>
             {children}
-            <Footer />
             <Analytics />
             <SpeedInsights />
           </ReactLenis>
