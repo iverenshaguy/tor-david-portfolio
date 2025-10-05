@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
-    "start": "next start",
+    "postbuild": "cp -r public .next/standalone/ && cp -r .next/static .next/standalone/.next/ && sed -i '' 's|\"start\": \"node .next/standalone/server.js\"|\"start\": \"node server.js\"|' .next/standalone/package.json && sed -i '' '/\"dev\":/d; /\"build\":/d; /\"postbuild\":/d; /\"lint\":/d; /\"lint-check\":/d; /\"type-check\":/d; /\"prepare\":/d; /\"precommit\":/d' .next/standalone/package.json && sed -i '' '/\"start\":/s/,$//' .next/standalone/package.json",
+    "start": "node .next/standalone/server.js",
     "lint": "next lint",
     "lint-check": "eslint --format=stylish src/",
     "type-check": "tsc --noEmit",

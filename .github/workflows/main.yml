@@ -5,12 +5,24 @@ jobs:
     name: 🎉 Deploy
     runs-on: ubuntu-latest
     steps:
-    - name: 🚚 Get latest code
-      uses: actions/checkout@v4
-    
-    - name: 📂 Sync files
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.6
-      with:
-        server: ftp.davidshaguy.com
-        username: github@davidshaguy.com
-        password: ${{ secrets.ftp_password }}
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v4
+
+      - name: Use Node.js 20
+        uses: actions/setup-node@v2
+        with:
+          node-version: "20"
+
+      - name: 🔨 Build Project
+        run: |
+          npm install
+          npm run build
+
+      - name: 📂 Sync files
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
+        with:
+          server: davidshaguy.com
+          username: github@davidshaguy.com
+          password: ${{ secrets.ftp_password }}
+          protocol: ftps
+          local-dir: .next/standalone/
