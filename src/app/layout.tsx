@@ -15,17 +15,31 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: "Next.js Portfolio Starter",
-    template: "%s | Next.js Portfolio Starter",
+    default: "Tor David Shaguy - Portfolio",
+    template: "%s | Tor David's Portfolio",
   },
-  description: "This is my portfolio.",
+  description: "Tor David's Portfolio.",
   openGraph: {
-    title: "My Portfolio",
-    description: "This is my portfolio.",
+    title: "Tor David Shaguy - Portfolio",
+    description: "Tor David's Portfolio.",
     url: baseUrl,
-    siteName: "My Portfolio",
+    siteName: "Tor David Shaguy - Portfolio",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/open-graph-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Tor David Shaguy - Portfolio",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Tor David Shaguy - Portfolio",
+    description: "Tor David's Portfolio.",
+    images: ["/open-graph-image.png"],
   },
   robots: {
     index: true,
