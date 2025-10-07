@@ -1,5 +1,4 @@
 import React from "react";
-import { Navbar } from "app/components/navbar";
 import Image from "next/image";
 import Section from "app/components/ui/section";
 import Content from "app/components/ui/content";
@@ -7,7 +6,6 @@ import Content from "app/components/ui/content";
 export const HeroSection = () => {
   return (
     <Section className="shadow-custom-hero flex h-screen flex-col overflow-hidden bg-stone-100 py-0! lg:max-h-[900px] lg:min-h-[850px] dark:bg-neutral-800">
-      <Navbar />
       <Content className="flex h-[calc(100vh-var(--sticky-navbar-height))] flex-grow flex-col items-center justify-center gap-8 text-center md:gap-16 lg:flex-row lg:items-center lg:justify-between lg:gap-8 lg:text-left">
         <div className="relative z-10 flex w-full flex-col items-center gap-8 pt-10 md:pt-16 lg:max-w-[600px] lg:flex-1 lg:items-start lg:py-0">
           <h2 className="font-sans text-lg font-medium tracking-[0.50px] text-[#4F4F4F] md:text-2xl lg:text-xl dark:text-neutral-400">

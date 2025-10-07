@@ -162,12 +162,12 @@ export default function PortfolioSection() {
     <Section
       id="works"
       ref={containerRef}
-      className="h-screen w-full overflow-scroll bg-white [contain:layout] dark:bg-[#1A1A1A]"
+      className="h-screen w-full overflow-hidden bg-white [contain:layout] dark:bg-[#1A1A1A]"
     >
       <Content className="pt-8">
-        <div className="flex flex-col items-center gap-12">
+        <div className="flex w-full max-w-full flex-col items-center gap-12 overflow-hidden">
           <Heading>
-            <span className="relative inline-block">
+            <span className="relative inline-block overflow-hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="126"

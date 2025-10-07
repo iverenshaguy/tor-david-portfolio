@@ -22,7 +22,7 @@ export default function AboutSection() {
                 height="45"
                 viewBox="0 0 501 45"
                 fill="none"
-                className="absolute top-[24px] left-[-20%] aspect-[53/40] h-[18] w-[200] md:top-[4px] md:left-[-80%] md:aspect-auto md:h-[41] md:w-[400] lg:top-[4px] lg:left-[-80%] lg:h-[45] lg:w-[430]"
+                className="absolute top-[24px] left-[-20%] aspect-[53/40] h-[18px] w-[200px] md:top-[4px] md:left-[-80%] md:aspect-auto md:h-[41px] md:w-[400px] lg:top-[4px] lg:left-[-80%] lg:h-[45px] lg:w-[430px]"
               >
                 <path
                   d="M2 2C79.2556 26.4015 286.813 65.4606 499 26.4848"

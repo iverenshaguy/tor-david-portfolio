@@ -202,14 +202,14 @@ export default function WorkExperienceSection() {
           width={203}
           height={162}
           alt="Highlight decoration"
-          className="absolute top-0 right-0 h-[74] w-[93] md:right-[-16px] md:h-[162px] md:w-[203px] lg:top-[-20px] lg:right-[0]"
+          className="absolute top-0 right-0 h-[74px] w-[93px] md:right-[-16px] md:h-[162px] md:w-[203px] lg:top-[-20px] lg:right-[0]"
         />
         <Image
           src="/loops.svg"
           width={277}
           height={90}
           alt="Group decoration"
-          className="absolute right-[20px] bottom-[200px] h-[41p] w-[110px] md:right-[205px] md:bottom-[180px] md:h-[80px] md:w-[214px] lg:h-[100px] lg:w-[268px]"
+          className="absolute right-[20px] bottom-[200px] h-[41px] w-[110px] md:right-[205px] md:bottom-[180px] md:h-[80px] md:w-[214px] lg:h-[100px] lg:w-[268px]"
         />
       </Content>
     </Section>
