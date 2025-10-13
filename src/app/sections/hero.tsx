@@ -31,10 +31,8 @@ export const HeroSection = () => {
           </h2>
           <div className="px-10 md:px-20 lg:px-0">
             <h1 className="font-sans text-2xl leading-[1.4] font-bold tracking-[0.8px] text-black md:text-4xl md:leading-normal lg:text-5xl lg:leading-tight lg:tracking-[1.00px] dark:text-gray-400">
-              Promoting <br />
-              establishments by
-              {/*<br />*/} creating empathetic
-              {/*<br />*/} product experiences
+              Designing <br />
+              inclusive digital products that balance needs with user empathy
             </h1>
           </div>
         </div>

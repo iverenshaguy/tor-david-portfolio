@@ -20,6 +20,11 @@ const socialLinks = [
     icon: "./whatsapp_icon.svg",
     ariaLabel: "WhatsApp contact",
   },
+  {
+    href: "https://dribbble.com/B_lack",
+    icon: "./dribbble.svg",
+    ariaLabel: "Dribbble contact",
+  },
 ];
 
 export function Footer() {

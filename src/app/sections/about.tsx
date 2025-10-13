@@ -38,51 +38,66 @@ export default function AboutSection() {
           <div className="w-full">
             <div className="space-y-6 p-0 font-sans">
               <p className="text-lg text-black dark:text-white">
-                <span className="font-normal">My name is </span>
-                <span className="font-bold">
-                  <strong>Shaguy Tor David</strong>
-                </span>
+                <span className="font-normal">Hi, I&#39;m </span>
+                <span className="font-semibold">Shaguy Tor David</span>
                 <span className="font-normal">
-                  . I am a passionate and detail-oriented UI/UX Designer with a
-                  background in Library and information Science which gives me a
-                  unique edge in empathising with users needs and it equips me
-                  with a strong foundation in user research and information
-                  organisation.
+                  , a passionate and detail-oriented{" "}
+                  <span className="font-semibold">UI/UX Designer</span> with a
+                  background in Library and Information Science, which gives me
+                  a strong edge in user empathy, research, and information
+                  architecture.
                 </span>
               </p>
 
               <p className="text-lg text-black dark:text-white">
-                I am passionate about crafting stunning, user-friendly,
-                intuitive and engaging digital experiences that drive results.
-                With a unique skill set that combines user-centered design
-                principles and QA skills, I am able to create designs that meet
-                business objectives and delight users.
+                I&#39;m driven by a desire to design{" "}
+                <span className="font-semibold">
+                  meaningful and intuitive digital experiences
+                </span>{" "}
+                that are both user-centered and business-aligned. With a unique
+                skill set that combines{" "}
+                <span className="font-semibold">UX thinking</span>,{" "}
+                <span className="font-semibold">visual design</span>, and{" "}
+                <span className="font-semibold">QA testing</span>, I enjoy
+                crafting interfaces that don&#39;t just look great, but actually
+                solve problems and delight users.
               </p>
 
               <div className="block text-lg text-black dark:text-white">
-                I am also passionate about:
+                <h2 className="mb-2 font-bold">
+                  What I&#39;m passionate about:
+                </h2>
                 <ul className="list-inside list-disc pl-2">
-                  <li>Designing user-friendly interfaces</li>
-                  <li>Ensuring optimal user experiences</li>
-                  <li>Collaborating with cross-functional teams</li>
+                  <li>Designing clean, user-friendly interfaces</li>
+                  <li>
+                    Improving user experiences through research and testing
+                  </li>
+                  <li>
+                    Collaborating with cross-functional teams to bring ideas to
+                    life
+                  </li>
                 </ul>
               </div>
 
               <p className="text-lg text-black dark:text-white">
-                I am a very organised person, always comfortable learning new
-                things, fast learner, problem solver, cartoon lover, Introverted
-                person and interactive.
+                I&#39;m curious, self-driven, and continuously learning. Whether
+                it&#39;s jumping into a new design tool or taking on a QA task,
+                I thrive in spaces where creativity, collaboration, and purpose
+                meet. Outside of work, I&#39;m an introvert with a love for
+                cartoons, and a deep appreciation for products built with
+                intention.
               </p>
 
               <p className="text-lg text-black dark:text-white">
-                I&#39;m a self-motivated learner and enjoy tackling challenges.
-                I&#39;m excited to contribute my skills to ambitious projects
-                and work with positive, like-minded individuals.
+                As a self-driven UI/UX designer, I thrive on solving complex
+                design challenges and continuously expanding my skill set. I’m
+                passionate about contributing to forward-thinking projects and
+                collaborating with positive, purpose-driven teams.
               </p>
 
               <p className="text-lg text-black dark:text-white">
-                I taught myself QA because I enjoy working on products from
-                beginning to end, from ideation to development.
+                I taught myself QA because I enjoy seeing products through, from
+                ideation to development.
               </p>
             </div>
           </div>
