@@ -6,7 +6,7 @@ import Content from "app/components/ui/content";
 // TODO: render these in white for dark mode
 const socialLinks = [
   {
-    href: "linkedin.com/in/tor-david-shaguy-ab1845226",
+    href: "https://linkedin.com/in/tor-david-shaguy-ab1845226",
     icon: "./linkedin_icon.svg",
     ariaLabel: "LinkedIn profile",
   },
