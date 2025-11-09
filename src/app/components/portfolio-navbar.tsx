@@ -2,14 +2,21 @@
 
 import Link from "next/link";
 import React from "react";
+import { useRouter } from "next/navigation";
 
 export function PortfolioNavbar() {
+  const router = useRouter();
+
+  const handleGoBack = () => {
+    router.back();
+  };
   return (
     <header className="relative h-[fit-content] px-4 pt-[22px] pb-7">
       <div className="z-50 mx-auto flex h-[56px] w-full max-w-7xl items-center justify-between rounded-[2rem] border border-solid border-gray-200 px-4 py-0 tracking-tight transition-all duration-300 ease-in-out sm:mx-auto dark:border-gray-600">
         <div className="flex items-center gap-4">
           <Link
             href="/"
+            onClick={handleGoBack}
             className="flex h-8 w-8 items-center justify-center rounded-full text-gray-600 transition-colors hover:bg-gray-50 dark:text-gray-400 dark:hover:bg-gray-800"
             aria-label="Go back to home page"
           >

@@ -55,7 +55,7 @@ export default function BackToTop() {
   return (
     <button
       onClick={scrollToTop}
-      className="fixed bottom-8 left-1/2 z-[9999] flex h-[50px] w-[50px] -translate-x-1/2 cursor-pointer items-center justify-center rounded-full bg-white shadow-lg transition-all duration-300 hover:scale-110 hover:bg-gray-100 sm:bottom-4 sm:left-4 md:bottom-8 md:left-1/2 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700"
+      className="fixed bottom-8 left-1/2 z-[9999] flex h-[50px] w-[50px] -translate-x-1/2 cursor-pointer items-center justify-center rounded-full bg-white shadow-lg transition-all duration-300 hover:scale-110 hover:bg-gray-100 sm:bottom-4 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700"
       aria-label="Back to top"
     >
       <Image

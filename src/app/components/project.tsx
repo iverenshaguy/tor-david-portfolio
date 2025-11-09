@@ -1,6 +1,7 @@
 import ProjectMockup from "app/components/ui/project-mockup";
 import React from "react";
 import { useRouter } from "next/navigation";
+import { saveScrollProgress } from "app/sections/projects";
 
 export function Project({
   project,
@@ -20,6 +21,8 @@ export function Project({
   const router = useRouter();
 
   const handleViewDesign = () => {
+    // Save scroll progress before navigating
+    saveScrollProgress();
     // Navigate to the portfolio page with the project slug
     router.push(`/portfolio/${project.id}`);
   };

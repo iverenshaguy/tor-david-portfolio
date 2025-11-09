@@ -9,7 +9,7 @@ import Section from "app/components/ui/section";
 import Content from "app/components/ui/content";
 import Heading from "app/components/ui/heading";
 import BackToTop from "app/components/back-to-top";
-import ReactLenis from "lenis/react";
+import Scroll from "app/components/scroll";
 
 function renderDescriptionWithEmphasis(
   description: string,
@@ -155,7 +155,7 @@ export default async function Portfolio({
   return (
     <body className="scroll-smooth antialiased">
       <main className="flex min-w-0 flex-auto flex-col">
-        <ReactLenis root>
+        <Scroll>
           <Section
             className="bg-stone-100 px-4 py-4 pt-0! sm:px-6 lg:px-8 dark:bg-neutral-800"
             dataSection="hero"
@@ -284,7 +284,7 @@ export default async function Portfolio({
 
           {/* Back to Top Button */}
           <BackToTop />
-        </ReactLenis>
+        </Scroll>
       </main>
     </body>
   );
