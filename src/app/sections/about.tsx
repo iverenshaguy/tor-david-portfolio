@@ -40,8 +40,9 @@ export default function AboutSection() {
               <p className="text-lg text-[#1A1A1A] dark:text-white">
                 <span className="font-normal">
                   I’m a <span className="font-bold">UI/UX Designer</span> with
-                  experience conducting QA tests for websites and applications,
-                  ensuring both design excellence and functional quality.
+                  hands-on experience conducting QA tests for websites and
+                  applications, ensuring both design excellence and functional
+                  quality.
                 </span>
               </p>
 
@@ -62,10 +63,26 @@ export default function AboutSection() {
               </p>
 
               <p className="text-lg text-[#1A1A1A] dark:text-white">
-                My journey includes designing at Oliver Mead Investment
-                (2022–2024) and collaborating across diverse creative industries
-                before transitioning into tech. These experiences help me bring
-                empathy, structure, and creativity to every project.
+                My journey includes designing for{" "}
+                <span className="font-semibold">Arvo Finance</span> (2022–2024)
+                , where I worked on fintech products such as{" "}
+                <span className="font-semibold">ArvoFinance</span>,{" "}
+                <span className="font-semibold">ArvoLink</span> and{" "}
+                <span className="font-semibold">Performance Metric</span>,
+                focusing on improving usability, structure, and design systems.
+                I’m currently the{" "}
+                <span className="font-semibold">
+                  Lead Product Designer at Plantry
+                </span>
+                , building a culturally-aware meal planning experience that
+                combines simplicity, technology, and everyday life.
+              </p>
+
+              <p className="text-lg text-[#1A1A1A] dark:text-white">
+                These experiences have helped me develop empathy, structure, and
+                creativity in my work. I enjoy collaborating with teams that
+                value thoughtful, user-centered design and continuous
+                improvement.
               </p>
             </div>
           </div>

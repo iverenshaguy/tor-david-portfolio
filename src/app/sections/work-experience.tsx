@@ -59,7 +59,7 @@ export default function WorkExperienceSection() {
   // Work experience data
   const workExperiences = [
     {
-      role: "Lead UI/UX Designer – Plantry",
+      role: "Lead Product Designer – Plantry",
       period: "2025 - Present",
       description:
         "Designing and refining intuitive user experiences for a meal-planning app that blends AI, culture, and convenience to simplify daily cooking decisions.",
