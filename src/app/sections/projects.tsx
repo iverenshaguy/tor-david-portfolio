@@ -10,6 +10,7 @@ import { Project } from "app/components/project";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
+import { signalRestorationComplete } from "app/components/scroll-restoration-loader";
 
 gsap.registerPlugin(useGSAP, ScrollTrigger);
 
@@ -47,6 +48,7 @@ const projects = [
 ];
 
 const SCROLL_PROGRESS_KEY = "portfolio-scroll-progress";
+const NAVIGATION_FLAG_KEY = "portfolio-navigation-flag";
 
 // Function to save scroll progress (can be called from Project component)
 export const saveScrollProgress = () => {
@@ -64,6 +66,8 @@ export const saveScrollProgress = () => {
       SCROLL_PROGRESS_KEY,
       worksTrigger.progress.toString(),
     );
+    // Set flag to indicate we navigated away (not a reload)
+    sessionStorage.setItem(NAVIGATION_FLAG_KEY, "true");
   }
 };
 
@@ -98,7 +102,11 @@ export default function PortfolioSection() {
       });
 
       // Card position update function
-      const updateCardPositions = (progress: number, immediate = false) => {
+      const updateCardPositions = (
+        progress: number,
+        immediate = false,
+        animationDuration = 0,
+      ) => {
         const totalCards = cards.length;
         const progressPerCard = 1 / totalCards;
 
@@ -134,7 +142,7 @@ export default function PortfolioSection() {
             peekOffset * (1 - cardProgress);
 
           if (immediate) {
-            // Use gsap.set for instant positioning during restoration
+            // Use gsap.set for instant positioning
             gsap.set(card, {
               y: yPos,
               x: 0,
@@ -143,8 +151,9 @@ export default function PortfolioSection() {
             gsap.to(card, {
               y: yPos,
               x: 0,
-              duration: 0,
-              ease: "none",
+              duration: animationDuration,
+              ease: animationDuration > 0 ? "power2.out" : "none",
+              overwrite: true, // Kill any existing animations on this property
             });
           }
         });
@@ -168,9 +177,29 @@ export default function PortfolioSection() {
       // Refresh ScrollTrigger to recalculate positions
       ScrollTrigger.refresh();
 
-      // Restore scroll progress if saved
+      // Handle scroll to ensure ScrollTrigger stays in sync with Lenis
+      const handleScroll = () => {
+        ScrollTrigger.update();
+        // Ensure card positions are updated when scrolling
+        updateCardPositions(scrollTrigger.progress);
+        // Save progress continuously
+        sessionStorage.setItem(
+          SCROLL_PROGRESS_KEY,
+          scrollTrigger.progress.toString(),
+        );
+      };
+
+      // Check if we have a navigation flag (indicates back navigation, not reload)
+      const hasNavigationFlag = sessionStorage.getItem(NAVIGATION_FLAG_KEY);
+
+      // Restore scroll progress only if we have the navigation flag (back navigation)
+      // Clear flag after checking to reset for next navigation
       const savedProgress = sessionStorage.getItem(SCROLL_PROGRESS_KEY);
-      let shouldRestore = savedProgress !== null;
+      let shouldRestore =
+        savedProgress !== null && hasNavigationFlag === "true";
+
+      // Clear the navigation flag after checking
+      sessionStorage.removeItem(NAVIGATION_FLAG_KEY);
 
       if (shouldRestore) {
         const progress = parseFloat(savedProgress!);
@@ -194,26 +223,59 @@ export default function PortfolioSection() {
             const targetScrollPosition = scrollStart + scrollRange * progress;
 
             if (lenis && targetScrollPosition > 0 && scrollRange > 0) {
-              // Set card positions IMMEDIATELY before scrolling to prevent jankiness
-              updateCardPositions(progress, true);
+              // Calculate current scroll position
+              const currentScroll = lenis.scroll;
+              const scrollDistance = Math.abs(
+                targetScrollPosition - currentScroll,
+              );
 
-              // Scroll to the calculated position
-              lenis.scrollTo(targetScrollPosition, { immediate: true });
+              // Use smooth scroll animation with duration based on distance
+              // Duration between 0.8s and 1.5s depending on scroll distance
+              const scrollDuration = Math.min(
+                Math.max(scrollDistance / 1000, 0.8),
+                1.5,
+              );
 
-              // Force ScrollTrigger to update and sync
-              requestAnimationFrame(() => {
-                ScrollTrigger.refresh();
+              // Set initial card positions instantly (they start from reset positions)
+              // Then animate them to final positions smoothly
+              updateCardPositions(0, true); // Set to initial position instantly
+
+              // Animate cards to their final positions with smooth animation
+              // Use slightly longer duration than scroll for smoother effect
+              updateCardPositions(progress, false, scrollDuration * 0.8);
+
+              // Create a custom scroll handler for restoration
+              // This just updates positions without animation during scroll
+              const restoreScrollHandler = () => {
                 ScrollTrigger.update();
-                // Update positions again with actual ScrollTrigger progress
-                const actualProgress = scrollTrigger.progress;
-                updateCardPositions(actualProgress, true);
+                // Update positions smoothly but let GSAP handle the animation
+                // Don't create new animations, just update the target
+                updateCardPositions(scrollTrigger.progress, false, 0);
+              };
 
-                // Final sync to ensure everything is correct
-                requestAnimationFrame(() => {
-                  ScrollTrigger.update();
-                  updateCardPositions(scrollTrigger.progress, true);
-                });
+              // Temporarily replace the scroll handler
+              lenis.off("scroll", handleScroll);
+              lenis.on("scroll", restoreScrollHandler);
+
+              // Scroll smoothly to the calculated position
+              lenis.scrollTo(targetScrollPosition, {
+                duration: scrollDuration,
+                easing: (t) => 1 - Math.pow(1 - t, 3), // easeOutCubic
               });
+
+              // Restore normal scroll handler and final sync after animation completes
+              setTimeout(
+                () => {
+                  lenis.off("scroll", restoreScrollHandler);
+                  lenis.on("scroll", handleScroll);
+                  ScrollTrigger.refresh();
+                  ScrollTrigger.update();
+                  updateCardPositions(scrollTrigger.progress, false, 0);
+                  // Signal that restoration is complete
+                  signalRestorationComplete();
+                },
+                scrollDuration * 1000 + 100,
+              ); // Add small buffer
             }
           });
         };
@@ -228,18 +290,6 @@ export default function PortfolioSection() {
           });
         }, 300); // Increased delay to ensure ScrollTrigger is fully initialized
       }
-
-      // Handle scroll to ensure ScrollTrigger stays in sync with Lenis
-      const handleScroll = () => {
-        ScrollTrigger.update();
-        // Ensure card positions are updated when scrolling
-        updateCardPositions(scrollTrigger.progress);
-        // Save progress continuously
-        sessionStorage.setItem(
-          SCROLL_PROGRESS_KEY,
-          scrollTrigger.progress.toString(),
-        );
-      };
 
       lenis.on("scroll", handleScroll);
 
