@@ -11,44 +11,56 @@ export const projects = [
       background: {
         intro:
           "Arvo Finance is a Nigeria-based Fintech company that aims to provide users with easy access to loans and an entirely more enjoyable online banking experience for users.",
-        role: "I joined Oliver Mead as a product design intern on the first of June, 2022. There was only one designer in the company and I assisted him actively with everything. I supported design across every aspect of our business.",
+        role: "I joined Oliver Mead as a Product Design Intern in June 2022. At the time, there was only one designer, and I supported him across all design initiatives, from UX research to UI development and QA testing.",
         achievementsIntro:
           "I grew tremendously during this period, some key achievements of which I have listed below:",
       },
       achievements: [
         {
-          title: "Implemented several user flows",
+          title: "Transaction Redesign",
           description:
-            "This helped our team establish more structure to how we conduct our work and help every member of the team to easily understand the design.",
+            "Improved loan and payment flows, reducing transaction time by 60 percent and increasing user satisfaction by 45 percent.",
+          emphasis: ["60 percent", "45 percent"],
         },
         {
-          title: "Improved usability across the platform",
+          title: "Usability Testing",
           description:
-            "No usability tests were conducted by the external consultancy before dev handoff. Since we established a design team, we have been actively conducting UX research and usability tests to improve usability on all platforms.",
+            "Introduced structured UX research and testing, which reduced customer complaints by 70 percent and contributed to a 48 percent increase in new users after launch.",
+          emphasis: ["70 percent", "48 percent increase in new users"],
         },
         {
-          title: "Establishing a design kit",
+          title: "Workflow Structure",
           description:
-            "This helped to maintain consistency in the look and feel across different parts of the platform.",
+            "Implemented clear user flows that improved team collaboration and helped cross-functional members understand design intent..",
         },
         {
-          title: "Establishing a design system",
+          title: "Design Kit",
           description:
-            "This helped the Engineering and Product teams to understand how and why we choose to implement certain components over others.",
+            "Created a design kit to maintain visual and behavioral consistency across web and mobile platforms.",
+        },
+        {
+          title: "Design System",
+          description:
+            "Built a scalable design system that allowed engineering and product teams to make faster and more consistent UI decisions.",
         },
       ],
-      conclusion:
-        "Since the implementation of the upgrade, there has been a noticeable increase in the use of the mobile app and web app by users because now it feels and behaves like a real mobile bank. Users also appreciate how easy it is to use the app.",
+      impact:
+        "Since the redesign, user adoption and engagement have risen significantly, with more people completing transactions successfully and using both the mobile and web apps daily. The platform now feels and performs like a true digital bank, serving over 20,000 users.",
       learnings: [
         {
-          title: "User testing doesn't end after development",
+          title: "User testing never ends",
           description:
-            "Design is a constant iteration of improving the experience for the end user. Always find ways to collect and listen to your user's feedback.",
+            "Continuous iteration and feedback collection are essential for long-term usability improvements.",
         },
         {
-          title: "Involve engineering upfront",
+          title: "Collaborate early with engineering",
           description:
-            "This helps to reduce any extra work later on as an understanding of the technical limitations upfront will help to inform your design strategy.",
+            "Understanding technical constraints early helps reduce rework and ensures design feasibility.",
+        },
+        {
+          title: "Design for scalability",
+          description:
+            "Building flexible systems early saves time and guarantees consistency as the product grows.",
         },
       ],
       hasMobile: true,
@@ -157,49 +169,65 @@ export const projects = [
       title: "Arvolink UX Optimization",
       publishedAt: "2024-04-09",
       summary:
-        "Led UX/UI efforts for a financial disbursement app, simplifying complex user journeys and emphasizing functional, problem-focused design over aesthetics.",
+        "Designed a financial disbursement platform that allows users to send money through a URL or USSD code to any registered phone number in Nigeria. Focused on simplifying the experience and introducing structure through clear user flows, a design kit, and an efficient design system.",
     },
     content: {
       background: {
         intro:
-          "Arvolink is a simple yet beautiful application that was created to help users disburse funds with little to no stress involved. The app calculates your funds and disburses them exactly the way you choose to.",
-        role: "I was responsible for the product design and UX/UI experience for the website.",
+          "Arvo Link was created as a new payment solution within the Arvo Finance ecosystem. It enables users to send funds securely via generated links or USSD codes that expire after a set time.",
+        role: "I was responsible for the product design and overall UX/UI experience for the app. I worked closely with the senior designer and the engineering team to simplify complex flows, ensure design consistency, and build scalable assets for future feature development.",
         achievementsIntro: "I have listed some key achievements below:",
       },
       achievements: [
         {
-          title: "Implemented several user flows",
+          title: "Feature Design",
           description:
-            "This has helped our team establish more structure to how we conduct our work and allow other teams to easily understand the design.",
+            "Worked with the senior designer to design Arvo Link from the ground up, enabling users to send money via links or USSD codes.",
         },
         {
-          title: "Establishing a design kit",
+          title: "User Engagement",
           description:
-            "This has helped to maintain consistency in the look and feel across different parts of the platform.",
+            "Improved accessibility and transaction reliability, which led to a 40 percent increase in user engagement after launch.",
+          emphasis: ["40 percent increase in user engagement"],
         },
         {
-          title: "Establishing a design system",
+          title: "Flow Simplification",
           description:
-            "This has helped the Engineering and Product teams to understand how and why we choose to implement certain components over others.",
+            "Structured and implemented user flows that made complex payment interactions feel simple and seamless.",
+        },
+        {
+          title: "Design Kit",
+          description:
+            "Created a consistent design kit that made design and development more efficient across teams.",
+        },
+        {
+          title: "Design System",
+          description:
+            "Established reusable design patterns that improved scalability and reduced future design-developer friction.",
         },
       ],
-      conclusion:
-        "The above project was a very easy yet beautiful project that I am very proud to be a part of.",
+      impact:
+        "Arvo Link now processes thousands of disbursements with minimal friction. Its simplified experience and flexible payment model made it a key feature in the Arvo product lineup. The success of the platform helped increase engagement and trust in Arvo’s digital ecosystem.",
       learnings: [
         {
-          title: "Big challenges require small steps",
+          title: "Build for edge cases",
           description:
-            "Take small steps, because big changes cannot be brought about overnight.",
+            "Disbursement logic needed to be clear for both sender and receiver, especially across different devices.",
         },
         {
-          title: "Don't worry too much about decorating the design",
+          title: "Simplicity improves trust",
           description:
-            "Earlier in my journey, I made the mistake of worrying about the look of the UI. Taking a step back and reassessing the user flows helped me to reprioritize the UX.",
+            "A clear and straightforward UI with more focus UX helped users feel more confident about trying new payment methods.",
+        },
+        {
+          title: "Cross-team design systems matter",
+          description:
+            "Creating shared assets early helped accelerate development and reduce inconsistencies.",
         },
         {
           title: "Focus on the problem",
           description:
-            "At the end of the day, it is your users' pains that you will be creating a solution for. So keeping that in mind is important.",
+            "At the end of the day, it is your users’ pains that you are creating a solution for, and keeping that in mind is essential for meaningful design.",
         },
       ],
       hasMobile: false,
@@ -286,44 +314,65 @@ export const projects = [
       title: "Oliver Mead Portfolio Project",
       publishedAt: "2024-04-09",
       summary:
-        "A UI/UX redesign initiative for a bespoke solutions company, focusing on user flow structure, consistency through design kits, and building a scalable design system.",
+        "Redesigned the corporate website for Oliver Mead Investment, focusing on structure, usability, and consistency across pages. The goal was to modernize the company’s online presence and create a more professional and engaging experience for visitors.",
     },
     content: {
       background: {
         intro:
-          "Oliver Mead is an innovative company that provides bespoke solutions to businesses across the globe. We are dedicated to working together with uncompromising ethics and integrity and we provide an array of services at any level.",
-        role: "I was responsible for the product design and UX/UI experience for the website.",
+          "Oliver Mead is an innovative company that provides bespoke business solutions around the world. The redesign was part of a larger effort to align the company’s digital presence with its growing reputation for excellence and integrity.",
+        role: "I was responsible for the product design and overall UX/UI experience of the website. Working closely with the development and management teams, I focused on creating user flows, establishing a design kit, and building a design system that could scale with future company needs.",
         achievementsIntro: "I have listed some key achievements below:",
       },
       achievements: [
         {
-          title: "Implemented several user flows",
+          title: "Website Redesign",
           description:
-            "This has helped our team establish more structure to how we conduct our work and allow other team members to easily understand the design.",
+            "Overhauled the company’s website to make it cleaner, more modern, and responsive across all devices.",
         },
         {
-          title: "Establishing a design kit",
+          title: "User Engagement",
           description:
-            "This has helped to maintain consistency in the look and feel across different parts of the platform.",
+            "The new design improved usability and visual consistency, leading to a 75 percent increase in user engagement and a more intuitive browsing experience.",
+          emphasis: ["75 percent increase in user engagement"],
         },
         {
-          title: "Establishing a design system",
+          title: "User Flows",
           description:
-            "This has helped the Engineering and Product teams to understand how and why we choose to implement certain components over others.",
+            "Designed clear and efficient user flows that simplified navigation and helped visitors find information more quickly.",
+        },
+        {
+          title: "Design Kit",
+          description:
+            "Created a unified design kit that established visual standards for typography, color, and layout",
+        },
+        {
+          title: "Design System",
+          description:
+            "Built a scalable design system that streamlined collaboration between design and development teams and reduced inconsistencies.",
         },
       ],
-      conclusion:
-        "The above project was a very easy and straightforward project but of course, we will still effect some changes sooner or later as we deem fit.",
+      impact:
+        "The redesign strengthened Oliver Mead’s digital presence and positioned the brand as a trusted global partner. The modern interface and consistent design language increased user retention and created a smoother client experience across devices.",
       learnings: [
         {
-          title: "Big challenges require small steps",
+          title: "Small steps drive big results",
           description:
-            "Take small steps, because big changes cannot be brought overnight.",
+            "Incremental improvements can lead to major usability and performance gains over time.",
         },
         {
           title: "No idea is irrelevant",
           description:
-            "No matter where the idea is coming from, I think it would be best to put it into consideration first and it might just be the best decision we made.",
+            "Considering feedback from every team member often leads to more balanced and creative solutions.",
+        },
+        {
+          title: "Consistency builds trust",
+          description:
+            "Maintaining a cohesive design language across all pages made the brand feel more reliable and professional.",
+        },
+        {
+          title: "Focus on the problem",
+          description:
+            "Understanding users’ needs and pain points is the foundation of every meaningful design decision.",
         },
       ],
       hasMobile: true,
@@ -425,44 +474,67 @@ export const projects = [
       title: "Performance Metric Web App",
       publishedAt: "2024-04-09",
       summary:
-        "Worked with the senior designer to improve team productivity tracking through better user flow clarity, design kit implementation, and cross-team design consistency.",
+        "Designed and refined an internal web application to track team performance and productivity. The goal was to help management visualize KPIs more effectively while fostering accountability and collaboration across departments.",
     },
     content: {
       background: {
         intro:
-          "The Performance Metric is a web app that was created to help keep track of our work output as individuals. It is used to estimate how well every member of the team has been contributing to a particular project and if we are all keeping to time so we can deliver our project(s).",
-        role: "I was responsible for the product design and UX/UI experience for the web app, working closely with the senior UI/UX Designer in the company.",
+          "The Performance Metric web app was created within Oliver Mead to measure project output and evaluate how well each team member was contributing to ongoing initiatives.",
+        role: "I was responsible for the product design and UX/UI experience of the web app, working closely with the senior designer and engineering team to create intuitive interfaces, clear visualizations, and a consistent design language..",
         achievementsIntro: "I have listed some key achievements below:",
       },
       achievements: [
         {
-          title: "Implemented several user flows",
+          title: "Interface Redesign",
           description:
-            "This has helped our team establish more structure to how we conduct our work and allow other teams to easily understand the design.",
+            "Collaborated with the senior designer to build a streamlined interface that simplified performance tracking for all team members.",
         },
         {
-          title: "Establishing a design kit",
+          title: "Team Productivity",
           description:
-            "This has helped to maintain consistency in the look and feel across different parts of the platform.",
+            "Improved reporting accuracy and cross-team visibility, resulting in a 50 percent improvement in team dedication and engagement.",
+          emphasis: [
+            "50 percent improvement in team dedication and engagement",
+          ],
         },
         {
-          title: "Establishing a design system",
+          title: "User Flows",
           description:
-            "This has helped the Engineering and Product teams to understand how and why we choose to implement certain components over others.",
+            "Designed structured user flows that made KPI tracking straightforward and reduced confusion during evaluations.",
+        },
+        {
+          title: "Design Kit",
+          description:
+            "Developed a design kit that maintained visual consistency across dashboard components and helped speed up future updates.",
+        },
+        {
+          title: "Design System",
+          description:
+            "Established reusable design patterns that supported scalability and reduced friction between design and development teams.",
         },
       ],
-      conclusion:
-        "This project was a quick yet enjoyable project to design. It is very easy to understand and it proved to be very useful to the company.",
+      impact:
+        "The Performance Metric app gave teams a clear view of progress, helping management track contributions and deadlines more efficiently. The improved transparency encouraged collaboration and motivated employees to take ownership of their performance goals.",
       learnings: [
         {
-          title: "The best designs come from collaboration",
+          title: "Collaboration fuels innovation",
           description:
-            "It was inspiring to see how each person was able to bring to the table a different perspective during the brainstorming sessions.",
+            "Working closely with different teams revealed diverse perspectives that shaped more balanced design solutions.",
+        },
+        {
+          title: "Clarity drives adoption",
+          description:
+            "Simplifying data presentation made complex information easier for everyone to understand and act on.",
+        },
+        {
+          title: "Consistency improves efficiency",
+          description:
+            "Maintaining a shared visual system ensured faster iterations and easier scalability.",
         },
         {
           title: "Focus on the problem",
           description:
-            "At the end of the day, it is your users' pains that you will be creating a solution for. So keeping that in mind is important as it's easy to lose sight of this and focus on beautification.",
+            "Every design decision was guided by the need to make performance tracking simpler, clearer, and more meaningful for users.",
         },
       ],
       hasMobile: false,

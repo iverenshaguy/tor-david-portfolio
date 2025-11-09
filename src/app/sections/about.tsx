@@ -37,80 +37,38 @@ export default function AboutSection() {
           {/* About Content */}
           <div className="w-full">
             <div className="space-y-6 p-0 font-sans">
-              <p className="text-lg text-black dark:text-white">
-                <span className="font-normal">Hi, I&#39;m </span>
-                <span className="font-semibold">Shaguy Tor David</span>
+              <p className="text-lg text-[#1A1A1A] dark:text-white">
                 <span className="font-normal">
-                  , a passionate and detail-oriented{" "}
-                  <span className="font-semibold">UI/UX Designer</span> with a
-                  background in Library and Information Science, which gives me
-                  a strong edge in user empathy, research, and information
-                  architecture.
+                  I’m a <span className="font-bold">UI/UX Designer</span> with
+                  experience conducting QA tests for websites and applications,
+                  ensuring both design excellence and functional quality.
                 </span>
               </p>
 
-              <p className="text-lg text-black dark:text-white">
-                I&#39;m driven by a desire to design{" "}
-                <span className="font-semibold">
-                  meaningful and intuitive digital experiences
-                </span>{" "}
-                that are both user-centered and business-aligned. With a unique
-                skill set that combines{" "}
-                <span className="font-semibold">UX thinking</span>,{" "}
-                <span className="font-semibold">visual design</span>, and{" "}
-                <span className="font-semibold">QA testing</span>, I enjoy
-                crafting interfaces that don&#39;t just look great, but actually
-                solve problems and delight users.
+              <p className="text-lg text-[#1A1A1A] dark:text-white">
+                Skilled in tools like <span className="font-bold">Figma</span>,{" "}
+                <span className="font-bold">Webflow</span>,{" "}
+                <span className="font-bold">Notion</span>,{" "}
+                <span className="font-bold">Excel</span>,{" "}
+                <span className="font-bold">Adobe Illustrator</span>, and{" "}
+                <span className="font-bold">wireframes</span>,
+                <span className="font-bold">prototypes</span>, and{" "}
+                <span className="font-bold">high-fidelity mockups</span> that
+                blend creativity with usability. My design approach is{" "}
+                <span className="font-bold">data-driven</span> and{" "}
+                <span className="font-bold">user-focused</span>, grounded in{" "}
+                <span className="font-bold">research</span> and{" "}
+                <span className="font-bold">testing</span>.
               </p>
 
-              <div className="block text-lg text-black dark:text-white">
-                <h2 className="mb-2 font-bold">
-                  What I&#39;m passionate about:
-                </h2>
-                <ul className="list-inside list-disc pl-2">
-                  <li>Designing clean, user-friendly interfaces</li>
-                  <li>
-                    Improving user experiences through research and testing
-                  </li>
-                  <li>
-                    Collaborating with cross-functional teams to bring ideas to
-                    life
-                  </li>
-                </ul>
-              </div>
-
-              <p className="text-lg text-black dark:text-white">
-                I&#39;m curious, self-driven, and continuously learning. Whether
-                it&#39;s jumping into a new design tool or taking on a QA task,
-                I thrive in spaces where creativity, collaboration, and purpose
-                meet. Outside of work, I&#39;m an introvert with a love for
-                cartoons, and a deep appreciation for products built with
-                intention.
-              </p>
-
-              <p className="text-lg text-black dark:text-white">
-                As a self-driven UI/UX designer, I thrive on solving complex
-                design challenges and continuously expanding my skill set. I’m
-                passionate about contributing to forward-thinking projects and
-                collaborating with positive, purpose-driven teams.
-              </p>
-
-              <p className="text-lg text-black dark:text-white">
-                I taught myself QA because I enjoy seeing products through, from
-                ideation to development.
+              <p className="text-lg text-[#1A1A1A] dark:text-white">
+                My journey includes designing at Oliver Mead Investment
+                (2022–2024) and collaborating across diverse creative industries
+                before transitioning into tech. These experiences help me bring
+                empathy, structure, and creativity to every project.
               </p>
             </div>
           </div>
-
-          {/* Resume Button */}
-          <a
-            href="https://www.icloud.com/iclouddrive/0f6TH116APzcgvlgWq5en-BVw#Tor_David_Shaguy's_Resume_2"
-            rel="noopener noreferrer"
-            target="_blank"
-            className="h-auto rounded-full bg-[#4a3d7a] p-4 text-white hover:bg-[#3d3264] dark:bg-[#5a4b8e] dark:text-gray-300 dark:hover:bg-[#4a3d7a]"
-          >
-            Download Resume
-          </a>
         </div>
 
         {/* Decorative elements */}

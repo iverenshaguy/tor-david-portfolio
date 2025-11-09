@@ -18,7 +18,7 @@ const projects = [
     id: "arvo-finance",
     title: "Arvo Finance",
     description:
-      "ArvoFinance began an upgrade and redesign of it's mobile application and web application with the vision of becoming the next best Fintech owned app in Nigeria.",
+      "A Nigeria-based fintech app redesigned to make borrowing and online banking seamless, intuitive, and user-focused",
     imageUrl: "/projects/arvo-finance/arvo-finance-frame.svg",
     hasMobile: true,
   },
@@ -26,7 +26,7 @@ const projects = [
     id: "oliver-mead",
     title: "Oliver Mead",
     description:
-      "This website was created to tell individuals what they need to know about Oliver Mead and it also answers frequently asked questions.",
+      "A corporate website redesign for a bespoke solutions company, emphasizing structure, design consistency, and scalable UI systems.",
     imageUrl: "/projects/oliver-mead/oliver-mead-frame.svg",
     hasMobile: true,
   },
@@ -34,14 +34,14 @@ const projects = [
     id: "arvo-link",
     title: "Arvo Link",
     description:
-      "The project was given to my team by one of the political parties in Nigeria sometime before the general election that was held last year.",
+      "A financial disbursement app designed to simplify complex fund transfers through thoughtful, problem-focused UX and clean, functional design.",
     imageUrl: "/projects/arvo-link/arvo-link-frame.svg",
   },
   {
     id: "performance-metric",
     title: "Performance Metric",
     description:
-      "This project was brought up within the Tech team at Oliver Mead to help us keep track of how well every member of the tech team is performing.",
+      "An internal productivity tracking web app redesigned to visualize team performance through clean, efficient, and collaborative design.",
     imageUrl: "/projects/performance-metric/performance-metric-frame.svg",
   },
 ];
@@ -165,16 +165,16 @@ export default function PortfolioSection() {
       className="h-screen w-full overflow-hidden bg-white [contain:layout] dark:bg-[#1A1A1A]"
     >
       <Content className="pt-8">
-        <div className="flex w-full max-w-full flex-col items-center gap-12 overflow-hidden">
+        <div className="flex w-full max-w-full flex-col items-center gap-12">
           <Heading>
-            <span className="relative inline-block overflow-hidden">
+            <div className="relative inline-block">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="126"
                 height="105"
                 viewBox="0 0 126 105"
                 fill="none"
-                className="absolute top-[-20px] left-[-30px] h-[50px] w-[66px] md:top-[-50px] md:left-[-90px] md:h-[105px] md:w-[126px]"
+                className="absolute top-[-25px] left-[-30px] h-[50px] w-[66px] md:top-[-50px] md:left-[-90px] md:h-[105px] md:w-[126px]"
               >
                 <path
                   d="M63.8124 59.2485C63.8124 59.2485 37.0659 56.3772 17.1405 62.2661"
@@ -225,7 +225,7 @@ export default function PortfolioSection() {
                   strokeLinecap="round"
                 />
               </svg>
-            </span>
+            </div>
           </Heading>
 
           <div className="relative h-[calc(100vh_-_120px)] w-full space-y-4">

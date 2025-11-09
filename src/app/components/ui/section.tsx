@@ -19,7 +19,7 @@ export default function Section({
       ref={ref}
       id={id}
       data-section={dataSection}
-      className={`relative w-full scroll-mt-20 py-5 font-sans md:px-8 md:py-12 lg:py-16 ${className}`}
+      className={`relative w-full scroll-mt-20 px-4 py-5 font-sans md:px-8 md:py-12 lg:py-16 ${className}`}
     >
       {children}
     </section>

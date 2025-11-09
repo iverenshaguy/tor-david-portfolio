@@ -24,22 +24,18 @@ export function Navbar() {
 
   return (
     <header
-      className={`sticky top-0 z-50 h-[fit-content] bg-stone-100 dark:bg-neutral-800 ${isScrolled ? "pt-0" : "px-4 pt-[22px]"}`}
+      className={`sticky top-0 z-50 h-[fit-content] px-4 md:px-8 ${isScrolled ? "bg-white pt-0 shadow-sm dark:bg-[#1A1A1A]" : "bg-stone-100 pt-[22px] dark:bg-neutral-800"}`}
     >
       <div
-        className={`z-50 tracking-tight transition-[transform,opacity,width,height] duration-300 ease-in-out ${
-          isScrolled
-            ? "top-0 left-0 w-full px-0 py-0"
-            : `w-full max-w-7xl border border-solid border-gray-200 px-4 transition-[transform,opacity,width,height] duration-300 ease-in-out sm:mx-auto dark:border-gray-600`
-        } ${
-          isMobileMenuOpen ? "rounded-t-[2rem] border-b-0" : "rounded-[2rem]"
+        className={`z-50 mx-auto w-full max-w-7xl px-4 tracking-tight transition-[transform,opacity,width,height] duration-300 ease-in-out ${
+          isScrolled ? "top-0 left-0 py-0" : ""
         }`}
       >
         <div
-          className={`mx-auto flex items-center justify-between bg-transparent px-6 py-0 ${
+          className={`mx-auto flex items-center justify-between bg-transparent py-0 transition-[transform,opacity,width,height] duration-300 ease-in-out ${
             isScrolled
-              ? "w-full bg-white py-3 shadow-sm dark:bg-neutral-800"
-              : ""
+              ? "w-full py-3"
+              : `${isMobileMenuOpen ? "rounded-t-[2rem] border-b-0" : "rounded-[2rem]"} border border-solid border-gray-200 px-4 dark:border-gray-600`
           }`}
         >
           <div className="flex items-center">
@@ -84,13 +80,15 @@ export function Navbar() {
 
         {/* Mobile Navigation Items - Overlay that covers hero content */}
         <div
-          className={`absolute top-[79px] z-40 transition-[transform,opacity,width,height] duration-300 ease-in-out md:hidden ${
+          className={`absolute top-[79px] z-40 px-4 transition-[transform,opacity,width,height] duration-300 ease-in-out md:hidden ${
             isMobileMenuOpen
               ? "pointer-events-auto opacity-100"
               : "pointer-events-none opacity-0"
-          } ${isScrolled ? "right-0 left-0 bg-white dark:bg-neutral-800" : "right-4 left-4 rounded-br-[2rem] rounded-bl-[2rem] border-r border-b border-l border-solid border-gray-200 bg-stone-100 dark:border-gray-600 dark:bg-neutral-800"}`}
+          } ${isScrolled ? "right-0 left-0 bg-white dark:bg-[#1A1A1A]" : "right-4 left-4"}`}
         >
-          <div className="flex flex-col items-center gap-4 px-6 py-6">
+          <div
+            className={`flex flex-col items-center gap-4 px-6 py-6 ${isScrolled ? "" : "rounded-br-[2rem] rounded-bl-[2rem] border-r border-b border-l border-solid border-gray-200 bg-stone-100 dark:border-gray-600 dark:bg-neutral-800"}`}
+          >
             <NavItems className="flex flex-col gap-6" buttonSize="large" />
           </div>
         </div>

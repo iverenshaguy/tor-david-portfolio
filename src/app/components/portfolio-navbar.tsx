@@ -5,7 +5,7 @@ import React from "react";
 
 export function PortfolioNavbar() {
   return (
-    <header className="relative h-[fit-content] pt-[22px] pb-7">
+    <header className="relative h-[fit-content] px-4 pt-[22px] pb-7">
       <div className="z-50 mx-auto flex h-[56px] w-full max-w-7xl items-center justify-between rounded-[2rem] border border-solid border-gray-200 px-4 py-0 tracking-tight transition-all duration-300 ease-in-out sm:mx-auto dark:border-gray-600">
         <div className="flex items-center gap-4">
           <Link

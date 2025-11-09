@@ -72,7 +72,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     <html
       lang="en"
       className={cx(
-        "bg-white text-black dark:bg-black dark:text-white",
+        "bg-white text-[#1A1A1A] dark:bg-[#1A1A1A] dark:text-white",
         poppins.variable,
       )}
     >

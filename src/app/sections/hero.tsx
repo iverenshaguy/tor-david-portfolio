@@ -7,7 +7,7 @@ export const HeroSection = () => {
   return (
     <Section className="shadow-custom-hero flex h-screen flex-col overflow-hidden bg-stone-100 py-0! lg:max-h-[900px] lg:min-h-[850px] dark:bg-neutral-800">
       <Content className="flex h-[calc(100vh-var(--sticky-navbar-height))] flex-grow flex-col items-center justify-center gap-8 text-center md:gap-16 lg:flex-row lg:items-center lg:justify-between lg:gap-8 lg:text-left">
-        <div className="relative z-10 flex w-full flex-col items-center gap-8 pt-10 md:pt-16 lg:max-w-[600px] lg:flex-1 lg:items-start lg:py-0">
+        <div className="relative z-10 flex w-full flex-col items-center gap-6 pt-10 md:gap-8 md:pt-16 lg:max-w-[600px] lg:flex-1 lg:items-start lg:py-0">
           <h2 className="font-sans text-lg font-medium tracking-[0.50px] text-[#4F4F4F] md:text-2xl lg:text-xl dark:text-neutral-400">
             ✌ Hi, I&apos;m David Shaguy,{" "}
             <span className="relative inline-block">
@@ -30,11 +30,19 @@ export const HeroSection = () => {
             </span>
           </h2>
           <div className="px-10 md:px-20 lg:px-0">
-            <h1 className="font-sans text-2xl leading-[1.4] font-bold tracking-[0.8px] text-black md:text-4xl md:leading-normal lg:text-5xl lg:leading-tight lg:tracking-[1.00px] dark:text-gray-400">
+            <h1 className="font-sans text-xl leading-[1.4] font-bold tracking-[0.8px] text-[#1A1A1A] md:text-3xl md:leading-normal lg:text-5xl lg:leading-tight lg:tracking-[1.00px] dark:text-gray-400">
               Designing <br />
               inclusive digital products that balance needs with user empathy
             </h1>
           </div>
+          <a
+            href="https://www.icloud.com/iclouddrive/0f6TH116APzcgvlgWq5en-BVw#Tor_David_Shaguy's_Resume_2"
+            rel="noopener noreferrer"
+            target="_blank"
+            className="mt-6 h-auto rounded-full bg-[#4a3d7a] px-10 py-4 text-white hover:bg-[#3d3264] sm:px-16 dark:bg-[#5a4b8e] dark:text-gray-300 dark:hover:bg-[#4a3d7a]"
+          >
+            Download Resume
+          </a>
         </div>
 
         <div className="z-0 flex h-full w-full justify-center lg:mt-0 lg:flex-1">

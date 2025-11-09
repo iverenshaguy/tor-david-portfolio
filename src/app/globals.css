@@ -7,7 +7,8 @@
   --section-height: calc(100vh - var(--sticky-navbar-height));
 
   /* Box Shadow */
-  --section-box-shadow: -2px 1px 6px 0px rgba(0, 0, 0, 0.10), 2px -1px 6px 0px rgba(0, 0, 0, 0.10)
+  --section-box-shadow:
+    -2px 1px 6px 0px rgba(0, 0, 0, 0.1), 2px -1px 6px 0px rgba(0, 0, 0, 0.1);
 }
 
 @theme inline {
@@ -30,10 +31,9 @@ html {
   /*padding: 0 !important;*/
 }
 
-
 /* Blog styles */
 .prose .anchor {
-  @apply absolute invisible no-underline;
+  @apply invisible absolute no-underline;
 
   margin-left: -1em;
   padding-right: 0.5em;
@@ -47,12 +47,12 @@ html {
 }
 
 .prose a {
-  @apply underline transition-all decoration-neutral-400 dark:decoration-neutral-600 underline-offset-2 decoration-[0.1em];
+  @apply underline decoration-neutral-400 decoration-[0.1em] underline-offset-2 transition-all dark:decoration-neutral-600;
 }
 
 .prose .anchor:after {
   @apply text-neutral-300 dark:text-neutral-700;
-  content: '#';
+  content: "#";
 }
 
 .prose *:hover > .anchor {
@@ -60,11 +60,11 @@ html {
 }
 
 .prose pre {
-  @apply bg-neutral-50 dark:bg-neutral-800 rounded-lg overflow-x-auto border border-neutral-200 dark:border-neutral-900 py-2 px-3 text-sm;
+  @apply overflow-x-auto rounded-lg border border-neutral-200 bg-neutral-50 px-3 py-2 text-sm dark:border-neutral-900 dark:bg-neutral-800;
 }
 
 .prose code {
-  @apply px-1 py-0.5 rounded-lg;
+  @apply rounded-lg px-1 py-0.5;
 }
 
 .prose pre code {
@@ -87,19 +87,19 @@ html {
 }
 
 .prose h1 {
-  @apply text-4xl font-medium tracking-tight mt-6 mb-2;
+  @apply mt-6 mb-2 text-4xl font-medium tracking-tight;
 }
 
 .prose h2 {
-  @apply text-xl font-medium tracking-tight mt-6 mb-2;
+  @apply mt-6 mb-2 text-xl font-medium tracking-tight;
 }
 
 .prose h3 {
-  @apply text-xl font-medium tracking-tight mt-6 mb-2;
+  @apply mt-6 mb-2 text-xl font-medium tracking-tight;
 }
 
 .prose h4 {
-  @apply text-lg font-medium tracking-tight mt-6 mb-2;
+  @apply mt-6 mb-2 text-lg font-medium tracking-tight;
 }
 
 .prose strong {
@@ -130,8 +130,8 @@ pre {
 }
 
 /* Remove Safari input shadow on mobile */
-input[type='text'],
-input[type='email'] {
+input[type="text"],
+input[type="email"] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -146,4 +146,41 @@ table {
 
 .title {
   text-wrap: balance;
+}
+
+/* Loader styles */
+/* HTML: <div class="loader"></div> */
+
+#loader {
+  width: 40px;
+  height: 60px;
+  position: relative;
+}
+#loader::before,
+#loader::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #5a4b8e;
+  clip-path: polygon(0 0, 100% 0, 100% 67%, 50% 67%, 50% 34%, 0 34%);
+  animation: sp7 2s infinite;
+}
+#loader::after {
+  --s: -1, -1;
+}
+@keyframes sp7 {
+  0%,
+  10% {
+    transform: scale(var(--s, 1)) translate(0, 0) rotate(0deg);
+  }
+  33% {
+    transform: scale(var(--s, 1)) translate(0, -20px) rotate(0deg);
+  }
+  66% {
+    transform: scale(var(--s, 1)) translate(10px, -20px) rotate(-90deg);
+  }
+  90%,
+  100% {
+    transform: scale(var(--s, 1)) translate(10px, -10px) rotate(-90deg);
+  }
 }

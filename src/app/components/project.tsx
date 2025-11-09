@@ -54,7 +54,7 @@ export function Project({
 
           {/* Right side - Project info */}
           <div className="flex w-full flex-col gap-4 bg-transparent md:gap-[30px]">
-            <div className="flex flex-col gap-2.5 text-black dark:text-gray-400">
+            <div className="flex flex-col gap-2.5 text-[#1A1A1A] dark:text-gray-400">
               <div className="flex flex-col gap-2.5 py-[5px]">
                 <h3 className="w-full text-2xl font-semibold">
                   {project.title}

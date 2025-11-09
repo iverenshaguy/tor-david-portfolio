@@ -49,79 +49,88 @@ export default function WorkExperienceSection() {
   };
 
   const designExperience = [
-    "Wireframes (low to high fidelity)",
+    "Wireframes (low → high fidelity)",
     "Prototypes & user flows",
     "Usability testing & design QA",
-    "UX research (qualitative and informal methods)",
+    "UX research (qualitative + informal methods)",
     "Visual hierarchy & accessibility-conscious design",
   ];
 
   // Work experience data
   const workExperiences = [
     {
+      role: "UI/UX Designer – Plantry",
+      period: "2025 - Present",
+      description:
+        "Designing and refining intuitive user experiences for a meal-planning app that blends AI, culture, and convenience to simplify daily cooking decisions.",
+    },
+    {
       role: "Marketing Associate – Kirkland Minoxidil",
       period: "2024 - Present",
+      description:
+        "Manages online product marketing and customer sales, handling social media promotion, direct orders, and timely product delivery to buyers.",
     },
     {
-      role: "UI/UX Designer - Oliver Mead Investment",
+      role: "UI/UX Designer - ArvoFinance",
       period: "2022 - 2024",
+      description:
+        "Worked on product design, user flows, and design systems for multiple web and mobile applications.",
     },
-    {
-      role: "Event Operations Assistant - Eventful Nigeria",
-      period: "2019 - 2021",
-    },
-    {
-      role: "Artists and Models Manager - CodeBlack records",
-      period: "2016 - 2019",
-    },
+    // {
+    //   role: "Event Operations Assistant - Eventful Nigeria",
+    //   period: "2019 - 2021",
+    //   description:
+    //     "Worked as an usher for large-scale corporate and cultural events, assisting with guest coordination, logistics, and on-site organization.",
+    // },
+    // {
+    //   role: "Artists and Models Manager - CodeBlack records",
+    //   period: "2016 - 2019",
+    //   description:
+    //     "Managed creative talent portfolios, bookings, and promotional collaborations while overseeing artist branding and client communications.",
+    // },
   ];
 
   return (
     <Section id="skills" className="bg-stone-100 dark:bg-neutral-800">
       <Content className="relative">
         <div className="relative z-10 flex flex-col items-center gap-12">
-          <Heading>Skill &amp; Experience</Heading>
+          <Heading>What I Do &amp; How I Work</Heading>
 
           <div className="w-full">
             <div className="flex flex-col items-start space-y-6 p-0 font-sans">
-              <div className="flex w-full flex-col space-y-6 text-lg leading-[normal] font-normal tracking-[0.36px] text-black dark:text-white">
+              <div className="flex w-full flex-col space-y-6 text-lg leading-[normal] font-normal tracking-[0.36px] text-[#1A1A1A] dark:text-white">
                 <WorkExperienceHeading>Skill & Tools</WorkExperienceHeading>
-                <p className="text-lg text-black dark:text-white">
-                  I specialize in{" "}
-                  <span className="font-semibold">UI/UX design</span> for
-                  websites and applications, with hands-on experience in{" "}
-                  <span className="font-semibold">QA testing</span>,{" "}
-                  <span className="font-semibold">user research</span>, and{" "}
-                  <span className="font-semibold">interactive prototyping</span>
-                  .
+                <p className="text-lg text-[#1A1A1A] dark:text-white">
+                  Below are the tools and methods I rely on to bring my designs
+                  to life.
                 </p>
 
-                <p className="font-sans text-lg leading-[normal] tracking-[0.36px] text-black dark:text-white">
-                  <h3 className="mb-2 font-bold">Tools I use:</h3>
-                  <ul className="list-inside list-disc pl-2">
+                <div className="font-sans text-lg leading-[normal] tracking-[0.36px] text-[#1A1A1A] dark:text-white">
+                  <h3 className="mb-2 font-bold">Tools</h3>
+                  <ul className="list-inside list-disc space-y-2 pl-2">
                     <li>
                       <span className="font-medium">Design: </span>
-                      {designTools.design.join(", ")}
+                      {designTools.design.join(" • ")}
                     </li>
                     <li>
                       <span className="font-medium">
                         No-Code & Documentation: &nbsp;
                       </span>
-                      {designTools.documentation.join(", ")}
+                      {designTools.documentation.join(" • ")}
                     </li>
                   </ul>
-                </p>
+                </div>
 
-                <p className="text-lg leading-[normal] font-normal tracking-[0.36px] text-black dark:text-white">
-                  <h3 className="mb-2 font-bold">UX Design Skills:</h3>
-                  <ul className="list-inside list-disc pl-2">
+                <div className="font-sans text-lg leading-[normal] font-normal tracking-[0.36px] text-[#1A1A1A] dark:text-white">
+                  <h3 className="mb-2 font-bold">Design Skills</h3>
+                  <ul className="list-inside list-disc space-y-2 pl-2">
                     {designExperience.map((exp, index) => (
                       <li key={index}>{exp}</li>
                     ))}
                   </ul>
-                </p>
+                </div>
 
-                <p className="font-sans text-lg leading-[normal] font-normal tracking-[0.36px] text-black dark:text-white">
+                <p className="font-sans text-lg leading-[normal] font-normal tracking-[0.36px] text-[#1A1A1A] dark:text-white">
                   My approach is grounded in user empathy, data, and simplicity.
                   I believe great design comes from understanding real people,
                   and I&#39;m always excited to contribute to thoughtful,
@@ -129,7 +138,7 @@ export default function WorkExperienceSection() {
                 </p>
               </div>
 
-              <div className="w-full text-lg leading-[normal] font-normal tracking-[0.36px] text-black dark:text-white">
+              <div className="w-full text-lg leading-[normal] font-normal tracking-[0.36px] text-[#1A1A1A] dark:text-white">
                 <WorkExperienceHeading>Experience</WorkExperienceHeading>
 
                 <div className="mt-6">
@@ -159,14 +168,14 @@ export default function WorkExperienceSection() {
           width={58}
           height={45}
           alt="Highlight decoration"
-          className="absolute top-[4px] left-4 h-[25px] w-[32px] md:top-0 md:left-4 md:h-[45px] md:w-[58px] lg:top-0 lg:left-0"
+          className="absolute top-[24px] left-4 h-[25px] w-[32px] md:top-0 md:left-4 md:h-[45px] md:w-[58px] lg:top-0 lg:left-0"
         />
         <Image
           src="blobs.svg"
           width={203}
           height={162}
           alt="Highlight decoration"
-          className="absolute top-0 right-0 h-[74px] w-[93px] md:right-[-16px] md:h-[162px] md:w-[203px] lg:top-[-20px] lg:right-[0]"
+          className="absolute top-[20px] right-0 h-[74px] w-[93px] md:right-[-16px] md:h-[162px] md:w-[203px] lg:top-[-20px] lg:right-[0]"
         />
         <Image
           src="/loops.svg"

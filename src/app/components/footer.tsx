@@ -31,7 +31,7 @@ export function Footer() {
   return (
     <footer
       id="connect"
-      className="relative w-full scroll-mt-20 border-t-[#C0BAC7] bg-linear-[180deg,_#FFF_50%,_#C0BAC7_100%] px-5 font-sans md:px-8 md:py-12 lg:py-16 dark:bg-[linear-gradient(180deg,_#1A1A1A_50%,_#3A3342_150.64%)]"
+      className="relative w-full scroll-mt-20 border-t-[#C0BAC7] bg-linear-[180deg,_#FFF_50%,_#C0BAC7_100%] px-4 font-sans md:px-8 md:py-12 lg:py-16 dark:bg-[linear-gradient(180deg,_#1A1A1A_50%,_#3A3342_150.64%)]"
     >
       <Content className="py-8 pb-20 sm:pb-8">
         <div className="relative z-10 flex flex-col items-start">

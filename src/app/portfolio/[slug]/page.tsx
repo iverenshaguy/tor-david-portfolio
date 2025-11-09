@@ -11,6 +11,75 @@ import Heading from "app/components/ui/heading";
 import BackToTop from "app/components/back-to-top";
 import ReactLenis from "lenis/react";
 
+function renderDescriptionWithEmphasis(
+  description: string,
+  emphasis?: string[],
+): React.ReactNode {
+  if (!emphasis || emphasis.length === 0) {
+    return description;
+  }
+
+  // Create an array of matches with their positions
+  const matches: Array<{ start: number; end: number; text: string }> = [];
+
+  emphasis.forEach((emphasizedText) => {
+    let searchIndex = 0;
+    while (true) {
+      const index = description.indexOf(emphasizedText, searchIndex);
+      if (index === -1) break;
+      matches.push({
+        start: index,
+        end: index + emphasizedText.length,
+        text: emphasizedText,
+      });
+      searchIndex = index + 1;
+    }
+  });
+
+  // Sort matches by start position
+  matches.sort((a, b) => a.start - b.start);
+
+  // Remove overlapping matches (keep the first one)
+  const nonOverlappingMatches: Array<{
+    start: number;
+    end: number;
+    text: string;
+  }> = [];
+  matches.forEach((match) => {
+    const overlaps = nonOverlappingMatches.some(
+      (existing) => match.start < existing.end && match.end > existing.start,
+    );
+    if (!overlaps) {
+      nonOverlappingMatches.push(match);
+    }
+  });
+
+  // Build the result array
+  const result: React.ReactNode[] = [];
+  let lastIndex = 0;
+
+  nonOverlappingMatches.forEach((match, idx) => {
+    // Add text before the match
+    if (match.start > lastIndex) {
+      result.push(description.slice(lastIndex, match.start));
+    }
+    // Add the emphasized text in bold
+    result.push(
+      <span className="font-semibold" key={`emphasis-${idx}`}>
+        {match.text}
+      </span>,
+    );
+    lastIndex = match.end;
+  });
+
+  // Add remaining text after last match
+  if (lastIndex < description.length) {
+    result.push(description.slice(lastIndex));
+  }
+
+  return result.length > 0 ? result : description;
+}
+
 export async function generateStaticParams() {
   return projects.map((project) => ({
     slug: project.slug,
@@ -116,28 +185,33 @@ export default async function Portfolio({
                   <p className="text-lg text-gray-700 dark:text-gray-300">
                     {project.content.background.role}
                   </p>
-                  <p className="text-lg text-gray-700 dark:text-gray-300">
+                  {/* <p className="text-lg text-gray-700 dark:text-gray-300">
                     {project.content.background.achievementsIntro}
-                  </p>
+                  </p> */}
 
                   {/* Key Achievements as subsection */}
                   <div className="mt-8">
                     <h3 className="mb-4 text-xl font-semibold text-gray-900 dark:text-gray-100">
                       Key Achievements
                     </h3>
-                    <ol className="space-y-3">
+                    <ul className="list-inside list-disc space-y-3">
                       {project.content.achievements.map(
                         (achievement, index) => (
                           <li
                             key={index}
                             className="text-lg text-gray-700 dark:text-gray-300"
                           >
-                            <strong>{achievement.title}.</strong>{" "}
-                            {achievement.description}
+                            <span className="font-semibold">
+                              {achievement.title}.
+                            </span>{" "}
+                            {renderDescriptionWithEmphasis(
+                              achievement.description,
+                              achievement.emphasis,
+                            )}
                           </li>
                         ),
                       )}
-                    </ol>
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -178,13 +252,13 @@ export default async function Portfolio({
             </Content>
           </Section>
 
-          {/* Conclusion Section */}
+          {/* Impact Section */}
           <Section className="mb-20">
             <Content className="flex flex-col items-center gap-4 sm:gap-8">
-              <Heading>Conclusion</Heading>
+              <Heading>Impact</Heading>
               <div className="flex w-full max-w-full flex-col items-center gap-8 space-y-6 lg:gap-12 lg:px-20">
                 <p className="mb-0 text-lg text-gray-700 dark:text-gray-300">
-                  {project.content.conclusion}
+                  {project.content.impact}
                 </p>
 
                 {/* Key Learnings as subsection */}
@@ -192,17 +266,17 @@ export default async function Portfolio({
                   <h3 className="mb-4 text-xl font-semibold text-gray-900 dark:text-gray-100">
                     Key Learnings
                   </h3>
-                  <ol className="space-y-3">
+                  <ul className="list-inside list-disc space-y-3">
                     {project.content.learnings.map((learning, index) => (
                       <li
                         key={index}
                         className="text-lg text-gray-700 dark:text-gray-300"
                       >
-                        <strong>{learning.title}.</strong>{" "}
+                        <span className="font-semibold">{learning.title}.</span>{" "}
                         {learning.description}
                       </li>
                     ))}
-                  </ol>
+                  </ul>
                 </div>
               </div>
             </Content>
