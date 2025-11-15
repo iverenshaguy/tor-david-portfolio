@@ -36,7 +36,7 @@ export const HeroSection = () => {
             </h1>
           </div>
           <a
-            href="https://www.icloud.com/iclouddrive/0f6TH116APzcgvlgWq5en-BVw#Tor_David_Shaguy's_Resume_2"
+            href="/TOR_DAVID_SHAGUY_Resume.pdf"
             rel="noopener noreferrer"
             target="_blank"
             className="mt-6 h-auto rounded-full bg-[#4a3d7a] px-10 py-4 text-white hover:bg-[#3d3264] sm:px-16 dark:bg-[#5a4b8e] dark:text-gray-300 dark:hover:bg-[#4a3d7a]"

@@ -65,7 +65,7 @@ export default function WorkExperienceSection() {
         "Designing and refining intuitive user experiences for a meal-planning app that blends AI, culture, and convenience to simplify daily cooking decisions.",
     },
     {
-      role: "Marketing Associate – Kirkland Minoxidil",
+      role: "Independent Product Marketer (Kirkland Minoxidil) - Self-Employed",
       period: "2024 - Present",
       description:
         "Manages online product marketing and customer sales, handling social media promotion, direct orders, and timely product delivery to buyers.",
