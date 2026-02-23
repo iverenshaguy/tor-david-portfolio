@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     template: "%s | Tor David's Portfolio",
   },
   description:
-    "I am a UI/UX Designer and I conduct QA tests for websites and applications. I am skilled in a range of design tools such as Figma, Webflow, Notion, Microsoft Office, and more.",
+    "I am a UI/UX Designer and I conduct QA tests for websites and applications. I am skilled in a range of design tools such as Figma, Webflow, and more.",
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Tor David Shaguy - Portfolio",
     description:
-      "I am a UI/UX Designer and I conduct QA tests for websites and applications. I am skilled in a range of design tools such as Figma, Webflow, Notion, Microsoft Office, and more.",
+      "I am a UI/UX Designer and I conduct QA tests for websites and applications. I am skilled in a range of design tools such as Figma, Webflow, and more.",
     url: baseUrl,
     siteName: "Tor David Shaguy - Portfolio",
     locale: "en_US",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Tor David Shaguy - Portfolio",
     description:
-      "I am a UI/UX Designer and I conduct QA tests for websites and applications. I am skilled in a range of design tools such as Figma, Webflow, Notion, Microsoft Office, and more.",
+      "I am a UI/UX Designer and I conduct QA tests for websites and applications. I am skilled in a range of design tools such as Figma, Webflow, and more.",
     images: ["/open-graph-image.png"],
   },
   robots: {
